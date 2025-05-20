@@ -14,9 +14,9 @@ namespace WorldCup.DataAccess.Repositorys.FileData
     public class FileRepository : Interfaces.IDataReader
     {
         private const string BASEPATH = @"\assets\worldcup";
-        private static string RESULTS = @"\results.json";
-        private static string TEAMS = @"\teams.json";
-        private static string MATCHES = @"\matches.json";
+        private const string RESULTS = @"\results.json";
+        private const string TEAMS = @"\teams.json";
+        private const string MATCHES = @"\matches.json";
 
         public FileRepository()
         {
@@ -28,18 +28,32 @@ namespace WorldCup.DataAccess.Repositorys.FileData
             if (!File.Exists(path))
                 return Task.FromResult(new List<Match>());
 
-            var json = File.ReadAllText(path);
-            var matches = JsonConvert.DeserializeObject<List<Match>>(json);
-            return Task.FromResult(matches);
+            try
+            {
+                var json = File.ReadAllText(path);
+                var matches = JsonConvert.DeserializeObject<List<Match>>(json);
+                return Task.FromResult(matches);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<List<Match>> GetCountryMatchesAsync(string gender, string fifaCode)
         {
-            var allMatches = await GetAllMatchesAsync(gender);
+            try
+            {
+                var allMatches = await GetAllMatchesAsync(gender);
 
-            var countryMatches = allMatches.Where(m => m.HomeTeamCountry == fifaCode || m.AwayTeamCountry == fifaCode).ToList();
-            
-            return countryMatches;
+                var countryMatches = allMatches.Where(m => m.HomeTeamCountry == fifaCode || m.AwayTeamCountry == fifaCode).ToList();
+
+                return countryMatches;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Task<List<Team>> GetTeamsAsync(string gender)
@@ -48,9 +62,16 @@ namespace WorldCup.DataAccess.Repositorys.FileData
             if (!File.Exists(path))
                 return Task.FromResult(new List<Team>());
 
-            var json = File.ReadAllText(path);
-            var teams = JsonConvert.DeserializeObject<List<Team>>(json);
-            return Task.FromResult(teams);
+            try
+            {
+                var json = File.ReadAllText(path);
+                var teams = JsonConvert.DeserializeObject<List<Team>>(json);
+                return Task.FromResult(teams);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }
