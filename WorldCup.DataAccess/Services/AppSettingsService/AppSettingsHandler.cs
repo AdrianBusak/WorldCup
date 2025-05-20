@@ -44,7 +44,9 @@ namespace WorldCup.DataAccess.Services.AppSettingsService
             try
             {
                 var lines = File.ReadAllLines(FilePath);
-                var dict = lines.Select(line => line.Split('=')).ToDictionary(p => p[0], p => p[1]);
+                var dict = lines.Select(line =>
+                line.Split('='))
+                    .ToDictionary(p => p[0], p => p[1]);
 
                 return new Models.AppSettings()
                 {
