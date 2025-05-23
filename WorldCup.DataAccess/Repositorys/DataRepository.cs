@@ -36,7 +36,7 @@ namespace WorldCup.DataAccess.Repositorys
             appSettings = _appSettingsHandler.LoadSettings();
         }
 
-        public Task<List<Team>> GetTeamsAsync()
+        public Task<List<NationalTeam>> GetTeamsAsync()
            => _repo.GetTeamsAsync(appSettings.Competition);
 
         public Task<List<Match>> GetAllMatchesAsync()

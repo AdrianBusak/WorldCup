@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldCup.DataAccess", "WorldCup.DataAccess\WorldCup.DataAccess.csproj", "{5DD2B23A-D3AE-46D0-B824-204E7E894C98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldCup.Forms", "WorldCup.Forms\WorldCup.Forms.csproj", "{056FA04A-F1D4-490E-9ED3-B0852EAD3CF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5DD2B23A-D3AE-46D0-B824-204E7E894C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DD2B23A-D3AE-46D0-B824-204E7E894C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DD2B23A-D3AE-46D0-B824-204E7E894C98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056FA04A-F1D4-490E-9ED3-B0852EAD3CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056FA04A-F1D4-490E-9ED3-B0852EAD3CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056FA04A-F1D4-490E-9ED3-B0852EAD3CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056FA04A-F1D4-490E-9ED3-B0852EAD3CF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

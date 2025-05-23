@@ -36,7 +36,7 @@ namespace WorldCup.DataAccess.Services.AppSettingsService
             if (!File.Exists(FilePath))
                 return new Models.AppSettings()
                 {
-                    Competition = "man",
+                    Competition = "men",
                     Language = "hr",
                     DataSource = "API",
                 };
@@ -46,7 +46,7 @@ namespace WorldCup.DataAccess.Services.AppSettingsService
                 var lines = File.ReadAllLines(FilePath);
                 var dict = lines.Select(line =>
                 line.Split('='))
-                    .ToDictionary(p => p[0], p => p[1]);
+                    .ToDictionary(p => p[0].Trim(), p => p[1].Trim());
 
                 return new Models.AppSettings()
                 {

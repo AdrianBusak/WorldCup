@@ -56,16 +56,16 @@ namespace WorldCup.DataAccess.Repositorys.FileData
             }
         }
 
-        public Task<List<Team>> GetTeamsAsync(string gender)
+        public Task<List<NationalTeam>> GetTeamsAsync(string gender)
         {
             var path = Path.Combine(BASEPATH, @$"\{gender}{TEAMS}");
             if (!File.Exists(path))
-                return Task.FromResult(new List<Team>());
+                return Task.FromResult(new List<NationalTeam>());
 
             try
             {
                 var json = File.ReadAllText(path);
-                var teams = JsonConvert.DeserializeObject<List<Team>>(json);
+                var teams = JsonConvert.DeserializeObject<List<NationalTeam>>(json);
                 return Task.FromResult(teams);
             }
             catch (Exception ex)

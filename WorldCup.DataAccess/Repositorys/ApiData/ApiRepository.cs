@@ -10,6 +10,7 @@ using WorldCup.DataAccess.Repositorys.Interfaces;
 using System;
 using System.Collections.Generic;
 using RestSharp;
+using RestSharp.Serializers.NewtonsoftJson;
 
 namespace WorldCup.DataAccess.Repositorys.ApiData
 {
@@ -19,16 +20,24 @@ namespace WorldCup.DataAccess.Repositorys.ApiData
 
         public ApiRepository()
         {
-            _restClient = new RestClient("https://worldcup-vua.nullbit.hr/");
+            var options = new RestClientOptions("https://worldcup-vua.nullbit.hr/")
+            {
+                ThrowOnAnyError = true,
+                MaxTimeout = 10000
+            };
+            _restClient = new RestClient(
+                    options,
+                    configureSerialization: s => s.UseNewtonsoftJson()
+                    );
         }
 
-        public async Task<List<Team>> GetTeamsAsync(string gender)
+        public async Task<List<NationalTeam>> GetTeamsAsync(string gender)
         {
-            var request = new RestRequest($"{gender}/teams/result", Method.Get);
-            var response = await _restClient.ExecuteAsync<List<Team>>(request);
+            var request = new RestRequest($"{gender}/teams/results", Method.Get);
+            var response = await _restClient.ExecuteAsync<List<NationalTeam>>(request);
             if (response.IsSuccessful)
             {
-                return response.Data ?? new List<Team>();
+                return response.Data ?? new List<NationalTeam>();
             }
             else
             {
