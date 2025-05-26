@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WorldCup.DataAccess.Models;
-using WorldCup.DataAccess.Repositorys.ApiData;
-using WorldCup.DataAccess.Repositorys.FileData;
-using WorldCup.DataAccess.Repositorys.Interfaces;
+using WorldCup.DataAccess.Repositories.ApiData;
+using WorldCup.DataAccess.Repositories.FileData;
+using WorldCup.DataAccess.Repositories.Interfaces;
 using WorldCup.DataAccess.Services.AppSettingsService;
 using WorldCup.DataAccess.Services.FavoritePlayersService;
 using WorldCup.DataAccess.Services.FavoriteTeamService;
 using WorldCup.DataAccess.Services.PlayerImagePathService;
 
-namespace WorldCup.DataAccess.Repositorys
+namespace WorldCup.DataAccess.Repositories
 {
     internal static class RepositoryFactory
     {
@@ -22,7 +22,7 @@ namespace WorldCup.DataAccess.Repositorys
 
         internal static Interfaces.IDataReader CreateReader()
         {
-            return source.DataSource.ToUpper() == "API"
+            return source.DataSource.ToLower().Equals("api")
                 ? new ApiRepository()
                 : new FileRepository();
         }

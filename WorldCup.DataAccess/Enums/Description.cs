@@ -16,7 +16,9 @@ namespace WorldCup.DataAccess.Enums
         PartlyCloudy,
         [EnumMember(Value = "Partly Cloudy Night")]
         PartlyCloudyNight,
-        Sunny
+        Sunny,
+        [EnumMember(Value = "Cloudy Night")]
+        CloudyNight
     };
 
 }

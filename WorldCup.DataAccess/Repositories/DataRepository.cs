@@ -6,13 +6,14 @@ using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 using WorldCup.DataAccess.Models;
+using WorldCup.DataAccess.Repositories;
 using WorldCup.DataAccess.Services;
 using WorldCup.DataAccess.Services.AppSettingsService;
 using WorldCup.DataAccess.Services.FavoritePlayersService;
 using WorldCup.DataAccess.Services.FavoriteTeamService;
 using WorldCup.DataAccess.Services.PlayerImagePathService;
 
-namespace WorldCup.DataAccess.Repositorys
+namespace WorldCup.DataAccess.Repositories
 {
     public class DataRepository
     {

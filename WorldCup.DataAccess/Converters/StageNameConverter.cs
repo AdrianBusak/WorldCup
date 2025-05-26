@@ -20,17 +20,27 @@ namespace WorldCup.DataAccess.Converters
             {
                 case "Final":
                     return StageName.Final;
+
+                case "First Stage":
                 case "First stage":
                     return StageName.FirstStage;
+
+                case "Match for third place":
                 case "Play-off for third place":
                     return StageName.PlayOffForThirdPlace;
+
+                case "Quarter-final":
                 case "Quarter-finals":
                     return StageName.QuarterFinals;
+
                 case "Round of 16":
                     return StageName.RoundOf16;
+
+                case "Semi-final":
                 case "Semi-finals":
                     return StageName.SemiFinals;
-            }
+
+        }
             throw new Exception("Cannot unmarshal type StageName");
         }
 
@@ -48,19 +58,19 @@ namespace WorldCup.DataAccess.Converters
                     serializer.Serialize(writer, "Final");
                     return;
                 case StageName.FirstStage:
-                    serializer.Serialize(writer, "First stage");
+                    serializer.Serialize(writer, "First Stage");
                     return;
                 case StageName.PlayOffForThirdPlace:
-                    serializer.Serialize(writer, "Play-off for third place");
+                    serializer.Serialize(writer, "Match for third place");
                     return;
                 case StageName.QuarterFinals:
-                    serializer.Serialize(writer, "Quarter-finals");
+                    serializer.Serialize(writer, "Quarter-final");
                     return;
                 case StageName.RoundOf16:
                     serializer.Serialize(writer, "Round of 16");
                     return;
                 case StageName.SemiFinals:
-                    serializer.Serialize(writer, "Semi-finals");
+                    serializer.Serialize(writer, "Semi-final");
                     return;
             }
             throw new Exception("Cannot marshal type StageName");

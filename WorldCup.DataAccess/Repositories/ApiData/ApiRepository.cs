@@ -6,13 +6,13 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using WorldCup.DataAccess.Models;
-using WorldCup.DataAccess.Repositorys.Interfaces;
+using WorldCup.DataAccess.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
 
-namespace WorldCup.DataAccess.Repositorys.ApiData
+namespace WorldCup.DataAccess.Repositories.ApiData
 {
     public class ApiRepository : IDataReader
     {
@@ -23,7 +23,6 @@ namespace WorldCup.DataAccess.Repositorys.ApiData
             var options = new RestClientOptions("https://worldcup-vua.nullbit.hr/")
             {
                 ThrowOnAnyError = true,
-                MaxTimeout = 10000
             };
             _restClient = new RestClient(
                     options,
@@ -62,16 +61,23 @@ namespace WorldCup.DataAccess.Repositorys.ApiData
         public async Task<List<Match>> GetCountryMatchesAsync(string gender, string fifaCode)
         {
             var request = new RestRequest($"{gender}/matches/country?fifa_code={fifaCode}", Method.Get);
-            var response = await _restClient.ExecuteAsync<List<Match>>(request);
-            if (response.IsSuccessful)
+            try
             {
-                return response.Data ?? new List<Match>();
+                var response = await _restClient.ExecuteAsync<List<Match>>(request);
+                if (response.IsSuccessful)
+                {
+                    return response.Data ?? new List<Match>();
+                }
+                else
+                {
+                    throw new Exception($"Error fetching matches: {response.ErrorMessage}");
+                }
             }
-            else
+            catch (Exception)
             {
-                throw new Exception($"Error fetching matches: {response.ErrorMessage}");
+
+                throw new Exception("Bad request. Include the existing country fifa code!");
             }
         }
     }
-
 }

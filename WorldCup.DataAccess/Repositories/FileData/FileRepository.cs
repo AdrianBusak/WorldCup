@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WorldCup.DataAccess.Models;
-using WorldCup.DataAccess.Repositorys.Interfaces;
+using WorldCup.DataAccess.Repositories.Interfaces;
 using WorldCup.DataAccess.Services.AppSettingsService;
 
-namespace WorldCup.DataAccess.Repositorys.FileData
+namespace WorldCup.DataAccess.Repositories.FileData
 {
     public class FileRepository : Interfaces.IDataReader
     {

@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using WorldCup.DataAccess.Models;
 
-namespace WorldCup.DataAccess.Repositorys.Interfaces
+namespace WorldCup.DataAccess.Repositories.Interfaces
 {
     public interface IDataReader
     {
