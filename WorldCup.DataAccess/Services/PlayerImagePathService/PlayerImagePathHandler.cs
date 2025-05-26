@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorldCup.DataAccess.Helpers;
 
 namespace WorldCup.DataAccess.Services.PlayerImagePathService
 {
     internal class PlayerImagePathHandler : IPlayerImagePathHandler
     {
-        private const string PATH = @"assets\images.txt";
+        private static readonly string PATH = SolutionRoot.GetPlayerImagePath();
         private const char DEL = '#';
         public async Task<string> LoadImage(string playerName)
         {
@@ -32,27 +33,21 @@ namespace WorldCup.DataAccess.Services.PlayerImagePathService
 
                 return image;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw new Exception(ex.Message);
+                throw new Exception("Error with loading player image.");
             }
         }
 
         public void SaveImage(string imagePath, string playerName)
         {
-
             try
             {
-                if (!File.Exists(PATH))
-                {
-                    File.Create(PATH).Close();
-                }
-                File.WriteAllText(PATH, $"{playerName}{DEL}{imagePath}\n");
+                File.AppendAllText(PATH, $"{playerName}{DEL}{imagePath}\n");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new Exception(ex.Message);
+                throw new Exception("Error with saving player image.");
             }
         }
     }

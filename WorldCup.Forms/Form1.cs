@@ -18,12 +18,21 @@ namespace WorldCup.Forms
             try
             {
                 repository.SaveSettings(new AppSettings() { Competition = "women", DataSource = "api", Language = "hr" });
-                var test = await repository.GetTeamsAsync();
 
-                test.ForEach(test =>
+                //List<Player> players = await repository.GetPlayersFromFirstMatchAsync("ENG");
+
+                List<Player> favoritePlayers = new List<Player>();
+
+                repository.SaveFavoriteTeam("CRO");
+
+
+
+
+                var test = await repository.LoadFavoritePlayers();
+
+                test.ToList().ForEach(player =>
                 {
-
-                    lsTest.Items.Add($"{test.Country} - {test.Wins}");
+                    lsTest.Items.Add($"{player.Name} - {player.Position} - {player.ShirtNumber}");
                 });
 
                 AppSettings appSettings = repository.LoadSettings();

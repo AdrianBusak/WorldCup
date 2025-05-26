@@ -4,12 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorldCup.DataAccess.Helpers;
 
 namespace WorldCup.DataAccess.Services.FavoriteTeamService
 {
     internal class FavoriteTeamHandler : IFavoriteTeamHandler
     {
-        private const string PATH = @"assets\favoriteTeam.txt";
+        private static readonly string PATH = SolutionRoot.GetFavoriteNationalTeamPath();
         public string LoadFavoriteTeam()
         {
             if (!File.Exists(PATH))
@@ -29,16 +30,13 @@ namespace WorldCup.DataAccess.Services.FavoriteTeamService
 
         public void SaveFavoriteTeam(string team)
         {
-            if (!File.Exists(PATH))
+            try
             {
-                try
-                {
-                    File.WriteAllText(PATH, team);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception(ex.Message);
-                }
+                File.WriteAllText(PATH, team);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

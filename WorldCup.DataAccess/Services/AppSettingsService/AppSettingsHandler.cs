@@ -19,18 +19,6 @@ namespace WorldCup.DataAccess.Services.AppSettingsService
                 if (settings == null)
                     throw new ArgumentNullException(nameof(settings), "AppSettings object is null.");
 
-                var directory = Path.GetDirectoryName(FILEPATH);
-                if (string.IsNullOrWhiteSpace(directory))
-                    throw new Exception("Settings directory path is invalid.");
-
-                Directory.CreateDirectory(directory);
-
-                if (!File.Exists(FILEPATH))
-                {
-                    using (File.Create(FILEPATH)) { }
-                    ;
-                }
-
                 File.WriteAllLines(FILEPATH, new[]
                 {
                     $"language={settings.Language.ToLower()}",

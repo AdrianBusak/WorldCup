@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorldCup.DataAccess.Helpers;
 using WorldCup.DataAccess.Models;
 
 namespace WorldCup.DataAccess.Services.FavoritePlayersService
 {
     internal class FavoritePlayersHandler : IFavoritePlayersHandler
     {
-        private const string PATH = @"assets\favoritePlayers.txt";
+        private static readonly string PATH = SolutionRoot.GetFavoritePlayersPath();
         private readonly char DEL = '#';
 
         public Task<IEnumerable<Player>> LoadFavoritePlayers()
         {
             try
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(PATH)); // check
-
                 var lines = File.ReadAllLines(PATH);
                 var players = lines.Select(line =>
                 {
@@ -42,6 +41,7 @@ namespace WorldCup.DataAccess.Services.FavoritePlayersService
         {
             try
             {
+                File.WriteAllText(PATH, string.Empty);
                 foreach (Player player in players)
                 {
                     File.AppendAllText(PATH, $"{player.Name}{DEL}{player.Captain}{DEL}{player.ShirtNumber}{DEL}{player.Position}\n");
@@ -49,7 +49,7 @@ namespace WorldCup.DataAccess.Services.FavoritePlayersService
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception("Error saving favorite players. Please check the file path and permissions.");
             }
         }
 
