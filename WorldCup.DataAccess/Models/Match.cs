@@ -72,10 +72,10 @@
         public List<TeamEvent> AwayTeamEvents { get; set; }
 
         [JsonProperty("home_team_statistics")]
-        public TeamStatistics HomeTeamStatistics { get; set; }
+        public TeamStatistics? HomeTeamStatistics { get; set; }
 
         [JsonProperty("away_team_statistics")]
-        public TeamStatistics AwayTeamStatistics { get; set; }
+        public TeamStatistics? AwayTeamStatistics { get; set; }
 
         [JsonProperty("last_event_update_at")]
         public DateTimeOffset LastEventUpdateAt { get; set; }

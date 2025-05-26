@@ -17,22 +17,17 @@ namespace WorldCup.Forms
         {
             try
             {
-                repository.SaveSettings(new AppSettings() { Competition = "women", DataSource = "api", Language = "hr" });
+                repository.SaveSettings(new AppSettings() { Competition = "women", DataSource = "json", Language = "hr" });
 
                 //List<Player> players = await repository.GetPlayersFromFirstMatchAsync("ENG");
 
                 List<Player> favoritePlayers = new List<Player>();
 
-                repository.SaveFavoriteTeam("CRO");
+                var test = await repository.GetTeamsAsync();
 
-
-
-
-                var test = await repository.LoadFavoritePlayers();
-
-                test.ToList().ForEach(player =>
+                test.ToList().ForEach(test =>
                 {
-                    lsTest.Items.Add($"{player.Name} - {player.Position} - {player.ShirtNumber}");
+                    lsTest.Items.Add($"{test.Country} - {test.GroupLetter}");
                 });
 
                 AppSettings appSettings = repository.LoadSettings();

@@ -7,6 +7,44 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AssetsJson\worldcup\men\group_results.json" />
+    <None Remove="AssetsJson\worldcup\men\matches.json" />
+    <None Remove="AssetsJson\worldcup\men\results.json" />
+    <None Remove="AssetsJson\worldcup\men\teams.json" />
+    <None Remove="AssetsJson\worldcup\women\group_results.json" />
+    <None Remove="AssetsJson\worldcup\women\matches.json" />
+    <None Remove="AssetsJson\worldcup\women\results.json" />
+    <None Remove="AssetsJson\worldcup\women\teams.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AssetsJson\worldcup\men\group_results.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AssetsJson\worldcup\men\matches.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AssetsJson\worldcup\men\results.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AssetsJson\worldcup\men\teams.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AssetsJson\worldcup\women\group_results.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AssetsJson\worldcup\women\matches.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AssetsJson\worldcup\women\results.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AssetsJson\worldcup\women\teams.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RestSharp" Version="112.1.0" />
     <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="112.1.0" />

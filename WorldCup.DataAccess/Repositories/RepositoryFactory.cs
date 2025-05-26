@@ -18,11 +18,11 @@ namespace WorldCup.DataAccess.Repositories
     internal static class RepositoryFactory
     {
         private static IAppSettingsHandler appSettingsHandler = new AppSettingsHandler();
-        private static readonly AppSettings source = appSettingsHandler.LoadSettings();
+        private static readonly AppSettings settings = appSettingsHandler.LoadSettings();
 
         internal static Interfaces.IDataReader CreateReader()
         {
-            return source.DataSource.ToLower().Equals("api")
+            return settings.DataSource.ToLower().Equals("api")
                 ? new ApiRepository()
                 : new FileRepository();
         }
