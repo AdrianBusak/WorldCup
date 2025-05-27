@@ -48,7 +48,7 @@
             groupBox1 = new GroupBox();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
-            groupBox2 = new GroupBox();
+            gbDataSource = new GroupBox();
             rbHr = new RadioButton();
             rbEn = new RadioButton();
             gbGender = new GroupBox();
@@ -64,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage4.SuspendLayout();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            gbDataSource.SuspendLayout();
             gbGender.SuspendLayout();
             SuspendLayout();
             // 
@@ -107,13 +107,15 @@
             // 
             // btnConfirmFavoriteTeam
             // 
+            btnConfirmFavoriteTeam.BackColor = Color.LightCoral;
             btnConfirmFavoriteTeam.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConfirmFavoriteTeam.Location = new Point(279, 239);
             btnConfirmFavoriteTeam.Name = "btnConfirmFavoriteTeam";
             btnConfirmFavoriteTeam.Size = new Size(219, 43);
             btnConfirmFavoriteTeam.TabIndex = 2;
             btnConfirmFavoriteTeam.Text = "Spremi odabir";
-            btnConfirmFavoriteTeam.UseVisualStyleBackColor = true;
+            btnConfirmFavoriteTeam.UseVisualStyleBackColor = false;
+            btnConfirmFavoriteTeam.Click += btnConfirmFavoriteTeam_Click;
             // 
             // label1
             // 
@@ -132,6 +134,7 @@
             cbTeams.Name = "cbTeams";
             cbTeams.Size = new Size(219, 28);
             cbTeams.TabIndex = 0;
+            cbTeams.SelectedValueChanged += cbTeams_SelectedValueChanged;
             // 
             // tabPage2
             // 
@@ -148,23 +151,31 @@
             // 
             // flpFavorites
             // 
-            flpFavorites.Location = new Point(418, 116);
+            flpFavorites.AutoScroll = true;
+            flpFavorites.BorderStyle = BorderStyle.FixedSingle;
+            flpFavorites.FlowDirection = FlowDirection.TopDown;
+            flpFavorites.Location = new Point(418, 89);
             flpFavorites.Name = "flpFavorites";
-            flpFavorites.Size = new Size(354, 283);
+            flpFavorites.Size = new Size(354, 310);
             flpFavorites.TabIndex = 6;
+            flpFavorites.WrapContents = false;
             // 
             // flpOthers
             // 
-            flpOthers.Location = new Point(25, 116);
+            flpOthers.AutoScroll = true;
+            flpOthers.BorderStyle = BorderStyle.FixedSingle;
+            flpOthers.FlowDirection = FlowDirection.TopDown;
+            flpOthers.Location = new Point(25, 89);
             flpOthers.Name = "flpOthers";
-            flpOthers.Size = new Size(354, 283);
+            flpOthers.Size = new Size(354, 310);
             flpOthers.TabIndex = 5;
+            flpOthers.WrapContents = false;
             // 
             // lbTitleFavoritePlayers
             // 
             lbTitleFavoritePlayers.AutoSize = true;
             lbTitleFavoritePlayers.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleFavoritePlayers.Location = new Point(246, 29);
+            lbTitleFavoritePlayers.Location = new Point(246, 16);
             lbTitleFavoritePlayers.Name = "lbTitleFavoritePlayers";
             lbTitleFavoritePlayers.Size = new Size(295, 54);
             lbTitleFavoritePlayers.TabIndex = 4;
@@ -234,7 +245,7 @@
             // tabPage4
             // 
             tabPage4.Controls.Add(groupBox1);
-            tabPage4.Controls.Add(groupBox2);
+            tabPage4.Controls.Add(gbDataSource);
             tabPage4.Controls.Add(gbGender);
             tabPage4.Controls.Add(btnConfirmSettings);
             tabPage4.Controls.Add(btnCancel);
@@ -261,6 +272,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
+            radioButton1.Checked = true;
             radioButton1.Location = new Point(48, 40);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(117, 24);
@@ -280,26 +292,27 @@
             radioButton2.Text = "Engleski jezik";
             radioButton2.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // gbDataSource
             // 
-            groupBox2.Controls.Add(rbHr);
-            groupBox2.Controls.Add(rbEn);
-            groupBox2.Location = new Point(533, 136);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(208, 125);
-            groupBox2.TabIndex = 11;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Jezik";
+            gbDataSource.Controls.Add(rbHr);
+            gbDataSource.Controls.Add(rbEn);
+            gbDataSource.Location = new Point(533, 136);
+            gbDataSource.Name = "gbDataSource";
+            gbDataSource.Size = new Size(208, 125);
+            gbDataSource.TabIndex = 11;
+            gbDataSource.TabStop = false;
+            gbDataSource.Text = "Izvor";
             // 
             // rbHr
             // 
             rbHr.AutoSize = true;
+            rbHr.Checked = true;
             rbHr.Location = new Point(48, 40);
             rbHr.Name = "rbHr";
-            rbHr.Size = new Size(117, 24);
+            rbHr.Size = new Size(52, 24);
             rbHr.TabIndex = 2;
             rbHr.TabStop = true;
-            rbHr.Text = "Hrvatski jezik";
+            rbHr.Text = "API";
             rbHr.UseVisualStyleBackColor = true;
             // 
             // rbEn
@@ -307,10 +320,9 @@
             rbEn.AutoSize = true;
             rbEn.Location = new Point(48, 81);
             rbEn.Name = "rbEn";
-            rbEn.Size = new Size(118, 24);
+            rbEn.Size = new Size(65, 24);
             rbEn.TabIndex = 3;
-            rbEn.TabStop = true;
-            rbEn.Text = "Engleski jezik";
+            rbEn.Text = "JSON";
             rbEn.UseVisualStyleBackColor = true;
             // 
             // gbGender
@@ -327,18 +339,18 @@
             // rbMen
             // 
             rbMen.AutoSize = true;
-            rbMen.Location = new Point(48, 40);
+            rbMen.Location = new Point(54, 81);
             rbMen.Name = "rbMen";
             rbMen.Size = new Size(77, 24);
             rbMen.TabIndex = 2;
-            rbMen.TabStop = true;
             rbMen.Text = "Žensko";
             rbMen.UseVisualStyleBackColor = true;
             // 
             // rbWomen
             // 
             rbWomen.AutoSize = true;
-            rbWomen.Location = new Point(48, 81);
+            rbWomen.Checked = true;
+            rbWomen.Location = new Point(54, 40);
             rbWomen.Name = "rbWomen";
             rbWomen.Size = new Size(73, 24);
             rbWomen.TabIndex = 3;
@@ -386,6 +398,7 @@
             Name = "MainForm";
             Text = "MainForm";
             FormClosing += MainForm_FormClosing;
+            Load += MainForm_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -398,8 +411,8 @@
             tabPage4.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            gbDataSource.ResumeLayout(false);
+            gbDataSource.PerformLayout();
             gbGender.ResumeLayout(false);
             gbGender.PerformLayout();
             ResumeLayout(false);
@@ -427,7 +440,7 @@
         private GroupBox groupBox1;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
-        private GroupBox groupBox2;
+        private GroupBox gbDataSource;
         private RadioButton rbHr;
         private RadioButton rbEn;
         private GroupBox gbGender;

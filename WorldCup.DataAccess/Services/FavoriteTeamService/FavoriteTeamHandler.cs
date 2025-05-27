@@ -18,14 +18,17 @@ namespace WorldCup.DataAccess.Services.FavoriteTeamService
                 throw new FileNotFoundException();
             }
 
-            var team = File.ReadAllText(PATH);
-
-            if (string.IsNullOrEmpty(team))
+            try
             {
-                throw new NullReferenceException();
-            }
+                var team = File.ReadAllText(PATH);
 
-            return team;
+                return team;
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Error with loading favorite national team.");
+            }
         }
 
         public void SaveFavoriteTeam(string team)

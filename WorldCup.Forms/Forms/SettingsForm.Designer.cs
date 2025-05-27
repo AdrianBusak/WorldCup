@@ -33,11 +33,11 @@
             rbMen = new RadioButton();
             rbWomen = new RadioButton();
             gbGender = new GroupBox();
-            groupBox2 = new GroupBox();
+            gbLanguage = new GroupBox();
             rbHr = new RadioButton();
             rbEn = new RadioButton();
             gbGender.SuspendLayout();
-            groupBox2.SuspendLayout();
+            gbLanguage.SuspendLayout();
             SuspendLayout();
             // 
             // btnCancel
@@ -49,6 +49,7 @@
             btnCancel.TabIndex = 0;
             btnCancel.Text = "Odustani";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnConfirm
             // 
@@ -65,22 +66,24 @@
             // rbMen
             // 
             rbMen.AutoSize = true;
-            rbMen.Location = new Point(48, 40);
+            rbMen.Location = new Point(46, 81);
             rbMen.Name = "rbMen";
             rbMen.Size = new Size(77, 24);
             rbMen.TabIndex = 2;
-            rbMen.TabStop = true;
+            rbMen.Tag = "women";
             rbMen.Text = "Žensko";
             rbMen.UseVisualStyleBackColor = true;
             // 
             // rbWomen
             // 
             rbWomen.AutoSize = true;
-            rbWomen.Location = new Point(48, 81);
+            rbWomen.Checked = true;
+            rbWomen.Location = new Point(46, 40);
             rbWomen.Name = "rbWomen";
             rbWomen.Size = new Size(73, 24);
             rbWomen.TabIndex = 3;
             rbWomen.TabStop = true;
+            rbWomen.Tag = "men";
             rbWomen.Text = "Muško";
             rbWomen.UseVisualStyleBackColor = true;
             // 
@@ -95,25 +98,27 @@
             gbGender.TabStop = false;
             gbGender.Text = "Spol";
             // 
-            // groupBox2
+            // gbLanguage
             // 
-            groupBox2.Controls.Add(rbHr);
-            groupBox2.Controls.Add(rbEn);
-            groupBox2.Location = new Point(454, 107);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(208, 125);
-            groupBox2.TabIndex = 7;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Jezik";
+            gbLanguage.Controls.Add(rbHr);
+            gbLanguage.Controls.Add(rbEn);
+            gbLanguage.Location = new Point(454, 107);
+            gbLanguage.Name = "gbLanguage";
+            gbLanguage.Size = new Size(208, 125);
+            gbLanguage.TabIndex = 7;
+            gbLanguage.TabStop = false;
+            gbLanguage.Text = "Jezik";
             // 
             // rbHr
             // 
             rbHr.AutoSize = true;
+            rbHr.Checked = true;
             rbHr.Location = new Point(48, 40);
             rbHr.Name = "rbHr";
             rbHr.Size = new Size(117, 24);
             rbHr.TabIndex = 2;
             rbHr.TabStop = true;
+            rbHr.Tag = "hr";
             rbHr.Text = "Hrvatski jezik";
             rbHr.UseVisualStyleBackColor = true;
             // 
@@ -124,7 +129,7 @@
             rbEn.Name = "rbEn";
             rbEn.Size = new Size(118, 24);
             rbEn.TabIndex = 3;
-            rbEn.TabStop = true;
+            rbEn.Tag = "en";
             rbEn.Text = "Engleski jezik";
             rbEn.UseVisualStyleBackColor = true;
             // 
@@ -133,7 +138,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(742, 389);
-            Controls.Add(groupBox2);
+            Controls.Add(gbLanguage);
             Controls.Add(gbGender);
             Controls.Add(btnConfirm);
             Controls.Add(btnCancel);
@@ -141,8 +146,8 @@
             Text = "SettingsForm";
             gbGender.ResumeLayout(false);
             gbGender.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            gbLanguage.ResumeLayout(false);
+            gbLanguage.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -153,7 +158,7 @@
         private RadioButton rbMen;
         private RadioButton rbWomen;
         private GroupBox gbGender;
-        private GroupBox groupBox2;
+        private GroupBox gbLanguage;
         private RadioButton rbHr;
         private RadioButton rbEn;
     }
