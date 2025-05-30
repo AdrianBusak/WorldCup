@@ -8,7 +8,7 @@ using WorldCup.DataAccess.Models;
 
 namespace WorldCup.DataAccess.Services.FavoritePlayersService
 {
-    internal interface IFavoritePlayersHandler
+    public interface IFavoritePlayersHandler
     {
         void SaveFavoritePlayers(IEnumerable<Player> players);
         Task<IEnumerable<Player>> LoadFavoritePlayers();

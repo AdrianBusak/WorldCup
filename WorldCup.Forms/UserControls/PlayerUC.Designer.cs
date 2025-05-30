@@ -41,6 +41,7 @@
             // 
             // pbImage
             // 
+            pbImage.Image = Properties.Resources.football_player;
             pbImage.Location = new Point(255, 3);
             pbImage.Name = "pbImage";
             pbImage.Size = new Size(92, 92);
@@ -49,9 +50,11 @@
             // 
             // pbStarFavorite
             // 
-            pbStarFavorite.Location = new Point(317, 3);
+            pbStarFavorite.Image = Properties.Resources.starIcon;
+            pbStarFavorite.Location = new Point(219, 3);
             pbStarFavorite.Name = "pbStarFavorite";
             pbStarFavorite.Size = new Size(30, 30);
+            pbStarFavorite.SizeMode = PictureBoxSizeMode.StretchImage;
             pbStarFavorite.TabIndex = 2;
             pbStarFavorite.TabStop = false;
             // 
@@ -87,9 +90,12 @@
             // 
             // pbCaptain
             // 
-            pbCaptain.Location = new Point(219, 3);
+            pbCaptain.Image = Properties.Resources.captainIcon;
+            pbCaptain.InitialImage = Properties.Resources.captainIcon;
+            pbCaptain.Location = new Point(219, 39);
             pbCaptain.Name = "pbCaptain";
             pbCaptain.Size = new Size(30, 30);
+            pbCaptain.SizeMode = PictureBoxSizeMode.StretchImage;
             pbCaptain.TabIndex = 8;
             pbCaptain.TabStop = false;
             // 
@@ -97,14 +103,20 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(pbCaptain);
             Controls.Add(lbPosition);
             Controls.Add(lbNumber);
             Controls.Add(lbName);
             Controls.Add(pbStarFavorite);
             Controls.Add(pbImage);
+            Margin = new Padding(2);
             Name = "PlayerUC";
-            Size = new Size(350, 100);
+            Size = new Size(348, 98);
+            Load += PlayerUC_Load;
+            MouseClick += PlayerUC_MouseClick;
+            MouseDown += PlayerUC_MouseDown;
+            MouseMove += PlayerUC_MouseMove;
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbStarFavorite).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbCaptain).EndInit();

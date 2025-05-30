@@ -78,7 +78,7 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(800, 450);
+            tabControl1.Size = new Size(882, 493);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -90,16 +90,16 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(792, 417);
+            tabPage1.Size = new Size(874, 460);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Početna";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // lbTitleWorldCup
             // 
             lbTitleWorldCup.AutoSize = true;
             lbTitleWorldCup.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleWorldCup.Location = new Point(201, 32);
+            lbTitleWorldCup.Location = new Point(234, 76);
             lbTitleWorldCup.Name = "lbTitleWorldCup";
             lbTitleWorldCup.Size = new Size(391, 54);
             lbTitleWorldCup.TabIndex = 3;
@@ -109,7 +109,7 @@
             // 
             btnConfirmFavoriteTeam.BackColor = Color.LightCoral;
             btnConfirmFavoriteTeam.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnConfirmFavoriteTeam.Location = new Point(279, 239);
+            btnConfirmFavoriteTeam.Location = new Point(312, 283);
             btnConfirmFavoriteTeam.Name = "btnConfirmFavoriteTeam";
             btnConfirmFavoriteTeam.Size = new Size(219, 43);
             btnConfirmFavoriteTeam.TabIndex = 2;
@@ -121,7 +121,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(279, 150);
+            label1.Location = new Point(312, 194);
             label1.Name = "label1";
             label1.Size = new Size(142, 28);
             label1.TabIndex = 1;
@@ -130,10 +130,11 @@
             // cbTeams
             // 
             cbTeams.FormattingEnabled = true;
-            cbTeams.Location = new Point(279, 181);
+            cbTeams.Location = new Point(312, 225);
             cbTeams.Name = "cbTeams";
             cbTeams.Size = new Size(219, 28);
             cbTeams.TabIndex = 0;
+            cbTeams.SelectionChangeCommitted += cbTeams_SelectionChangeCommitted;
             cbTeams.SelectedValueChanged += cbTeams_SelectedValueChanged;
             // 
             // tabPage2
@@ -144,38 +145,45 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(792, 417);
+            tabPage2.Size = new Size(874, 460);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Igrači";
             tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Enter += tabPage2_Enter;
             // 
             // flpFavorites
             // 
+            flpFavorites.AllowDrop = true;
             flpFavorites.AutoScroll = true;
             flpFavorites.BorderStyle = BorderStyle.FixedSingle;
             flpFavorites.FlowDirection = FlowDirection.TopDown;
-            flpFavorites.Location = new Point(418, 89);
+            flpFavorites.Location = new Point(457, 94);
             flpFavorites.Name = "flpFavorites";
-            flpFavorites.Size = new Size(354, 310);
+            flpFavorites.Size = new Size(386, 310);
             flpFavorites.TabIndex = 6;
             flpFavorites.WrapContents = false;
+            flpFavorites.DragDrop += flpFavorites_DragDrop;
+            flpFavorites.DragEnter += flpFavorites_DragEnter;
             // 
             // flpOthers
             // 
+            flpOthers.AllowDrop = true;
             flpOthers.AutoScroll = true;
             flpOthers.BorderStyle = BorderStyle.FixedSingle;
             flpOthers.FlowDirection = FlowDirection.TopDown;
-            flpOthers.Location = new Point(25, 89);
+            flpOthers.Location = new Point(29, 94);
             flpOthers.Name = "flpOthers";
-            flpOthers.Size = new Size(354, 310);
+            flpOthers.Size = new Size(386, 310);
             flpOthers.TabIndex = 5;
             flpOthers.WrapContents = false;
+            flpOthers.DragDrop += flpOthers_DragDrop;
+            flpOthers.DragEnter += flpOthers_DragEnter;
             // 
             // lbTitleFavoritePlayers
             // 
             lbTitleFavoritePlayers.AutoSize = true;
             lbTitleFavoritePlayers.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleFavoritePlayers.Location = new Point(246, 16);
+            lbTitleFavoritePlayers.Location = new Point(290, 16);
             lbTitleFavoritePlayers.Name = "lbTitleFavoritePlayers";
             lbTitleFavoritePlayers.Size = new Size(295, 54);
             lbTitleFavoritePlayers.TabIndex = 4;
@@ -191,16 +199,16 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(792, 417);
+            tabPage3.Size = new Size(874, 460);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "tabPage3";
+            tabPage3.Text = "Rang liste";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(194, 107);
+            dataGridView1.Location = new Point(233, 107);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(581, 285);
@@ -218,7 +226,7 @@
             // lbCbTitleFilter
             // 
             lbCbTitleFilter.AutoSize = true;
-            lbCbTitleFilter.Location = new Point(22, 84);
+            lbCbTitleFilter.Location = new Point(24, 84);
             lbCbTitleFilter.Name = "lbCbTitleFilter";
             lbCbTitleFilter.Size = new Size(42, 20);
             lbCbTitleFilter.TabIndex = 6;
@@ -228,7 +236,7 @@
             // 
             lbTitleRangList.AutoSize = true;
             lbTitleRangList.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleRangList.Location = new Point(285, 19);
+            lbTitleRangList.Location = new Point(324, 19);
             lbTitleRangList.Name = "lbTitleRangList";
             lbTitleRangList.Size = new Size(209, 54);
             lbTitleRangList.TabIndex = 5;
@@ -237,9 +245,9 @@
             // cbFilter
             // 
             cbFilter.FormattingEnabled = true;
-            cbFilter.Location = new Point(22, 107);
+            cbFilter.Location = new Point(24, 107);
             cbFilter.Name = "cbFilter";
-            cbFilter.Size = new Size(151, 28);
+            cbFilter.Size = new Size(178, 28);
             cbFilter.TabIndex = 0;
             // 
             // tabPage4
@@ -253,16 +261,16 @@
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(792, 417);
+            tabPage4.Size = new Size(874, 460);
             tabPage4.TabIndex = 3;
-            tabPage4.Text = "tabPage4";
+            tabPage4.Text = "Postavke";
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(radioButton1);
             groupBox1.Controls.Add(radioButton2);
-            groupBox1.Location = new Point(292, 136);
+            groupBox1.Location = new Point(333, 156);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(208, 125);
             groupBox1.TabIndex = 12;
@@ -296,7 +304,7 @@
             // 
             gbDataSource.Controls.Add(rbHr);
             gbDataSource.Controls.Add(rbEn);
-            gbDataSource.Location = new Point(533, 136);
+            gbDataSource.Location = new Point(574, 156);
             gbDataSource.Name = "gbDataSource";
             gbDataSource.Size = new Size(208, 125);
             gbDataSource.TabIndex = 11;
@@ -329,7 +337,7 @@
             // 
             gbGender.Controls.Add(rbMen);
             gbGender.Controls.Add(rbWomen);
-            gbGender.Location = new Point(51, 136);
+            gbGender.Location = new Point(92, 156);
             gbGender.Name = "gbGender";
             gbGender.Size = new Size(208, 125);
             gbGender.TabIndex = 10;
@@ -362,7 +370,7 @@
             // 
             btnConfirmSettings.DialogResult = DialogResult.OK;
             btnConfirmSettings.ForeColor = Color.Black;
-            btnConfirmSettings.Location = new Point(522, 330);
+            btnConfirmSettings.Location = new Point(563, 350);
             btnConfirmSettings.Name = "btnConfirmSettings";
             btnConfirmSettings.Size = new Size(246, 66);
             btnConfirmSettings.TabIndex = 9;
@@ -372,7 +380,7 @@
             // btnCancel
             // 
             btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(24, 330);
+            btnCancel.Location = new Point(65, 350);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(246, 66);
             btnCancel.TabIndex = 8;
@@ -383,7 +391,7 @@
             // 
             lbTitleSettings.AutoSize = true;
             lbTitleSettings.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleSettings.Location = new Point(300, 24);
+            lbTitleSettings.Location = new Point(341, 44);
             lbTitleSettings.Name = "lbTitleSettings";
             lbTitleSettings.Size = new Size(192, 54);
             lbTitleSettings.TabIndex = 6;
@@ -393,7 +401,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(882, 493);
             Controls.Add(tabControl1);
             Name = "MainForm";
             Text = "MainForm";

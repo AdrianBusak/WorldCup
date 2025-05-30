@@ -106,8 +106,8 @@ namespace WorldCup.DataAccess.Repositories
         public Task<string> LoadPlayerImagePath(string playerName)
             => _playerImageHandler.LoadImage(playerName);
 
-        public void SavePlayerImage(string playerName, string sourceFilePath)
-            => _playerImageHandler.SaveImage(sourceFilePath, playerName);
+        public void SavePlayerImage(string imagePath, string playerName)
+            => _playerImageHandler.SaveImage(imagePath, playerName);
 
     }
 }

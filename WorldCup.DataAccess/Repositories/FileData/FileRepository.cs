@@ -74,22 +74,6 @@ namespace WorldCup.DataAccess.Repositories.FileData
                 throw new Exception(ex.Message);
             }
         }
-        public Task<List<NationalTeam>> GetTeamsShortAsync(string gender)
-        {
-            if (!File.Exists(TEAMS))
-                return Task.FromResult(new List<NationalTeam>());
-
-            try
-            {
-                var json = File.ReadAllText(TEAMS);
-                var teams = JsonConvert.DeserializeObject<List<NationalTeam>>(json);
-                return Task.FromResult(teams);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
 
     }
 }
