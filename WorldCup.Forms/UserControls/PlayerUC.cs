@@ -66,20 +66,27 @@ namespace WorldCup.Forms.UserControls
                 pbStarFavorite.Visible = value;
             }
         }
+        private string _imagePath;
+
         public string PlayerImage
         {
+            get => _imagePath;
             set
             {
+                _imagePath = value;
+
                 if (File.Exists(value))
                 {
-                    pbImage.Image = Image.FromFile(value);
+                    pbImage.ImageLocation = value;
                 }
                 else
                 {
                     pbImage.Image = Resources.football_player;
+                    pbImage.ImageLocation = null;
                 }
             }
         }
+
 
         private void ToggleSelection()
         {
@@ -175,5 +182,29 @@ namespace WorldCup.Forms.UserControls
             lbPosition.Text = Player.Position;
             pbCaptain.Visible = Player.Captain;
         }
+
+        private void pbImage_DoubleClick(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Title = "Select Player Image";
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                openFileDialog.Multiselect = false;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        pbImage.Image = Image.FromFile(openFileDialog.FileName);
+                        PlayerImage = openFileDialog.FileName;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed to load image.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
     }
 }

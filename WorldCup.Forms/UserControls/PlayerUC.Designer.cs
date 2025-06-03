@@ -47,6 +47,7 @@
             pbImage.Size = new Size(92, 92);
             pbImage.TabIndex = 0;
             pbImage.TabStop = false;
+            pbImage.DoubleClick += pbImage_DoubleClick;
             // 
             // pbStarFavorite
             // 

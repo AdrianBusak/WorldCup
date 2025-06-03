@@ -49,11 +49,11 @@ namespace WorldCup.DataAccess.Repositories
         public async Task<List<Player>> GetPlayersFromFirstMatchAsync(string fifaCode)
         {
             var matches = await GetCountryMatchesAsync(fifaCode);
-            var first = matches.Count > 0 ? matches[0] : null;
-            if (first == null) return new List<Player>();
+            var firstMatch = matches.Count > 0 ? matches[0] : null;
+            if (firstMatch == null) return new List<Player>();
 
-            var home = first.HomeTeamStatistics.StartingEleven
-                .Concat(first.HomeTeamStatistics.Substitutes)
+            var home = firstMatch.HomeTeamStatistics.StartingEleven
+                .Concat(firstMatch.HomeTeamStatistics.Substitutes)
                 .Select(player => new Player
                 {
                     Name = player.Name,
@@ -62,8 +62,8 @@ namespace WorldCup.DataAccess.Repositories
                     Position = player.Position.ToString()
                 }).ToList();
 
-            var away = first.AwayTeamStatistics.StartingEleven
-                .Concat(first.AwayTeamStatistics.Substitutes)
+            var away = firstMatch.AwayTeamStatistics.StartingEleven
+                .Concat(firstMatch.AwayTeamStatistics.Substitutes)
                 .Select(player => new Player
                 {
                     Name = player.Name,
@@ -72,7 +72,7 @@ namespace WorldCup.DataAccess.Repositories
                     Position = player.Position.ToString()
                 }).ToList();
 
-            return first.HomeTeam.Code == fifaCode
+            return firstMatch.HomeTeam.Code == fifaCode
                 ? home
                 : away;
         }
@@ -103,7 +103,7 @@ namespace WorldCup.DataAccess.Repositories
         // ———  PLAYER IMAGE PATHS  ———
         //
 
-        public Task<string> LoadPlayerImagePath(string playerName)
+        public string LoadPlayerImagePath(string playerName)
             => _playerImageHandler.LoadImage(playerName);
 
         public void SavePlayerImage(string imagePath, string playerName)

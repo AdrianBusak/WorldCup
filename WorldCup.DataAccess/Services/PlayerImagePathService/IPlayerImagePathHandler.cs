@@ -9,6 +9,6 @@ namespace WorldCup.DataAccess.Services.PlayerImagePathService
     public interface IPlayerImagePathHandler
     {
         void SaveImage(string imagePath, string playerName);
-        Task<string> LoadImage(string playerName);
+        string LoadImage(string playerName);
     }
 }

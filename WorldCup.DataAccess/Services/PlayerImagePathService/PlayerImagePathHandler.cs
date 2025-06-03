@@ -11,38 +11,45 @@ namespace WorldCup.DataAccess.Services.PlayerImagePathService
     {
         private static readonly string PATH = SolutionRoot.GetPlayerImagePath();
         private const char DEL = '#';
-        public async Task<string> LoadImage(string playerName)
+        public string LoadImage(string playerName)
         {
+            if (!File.Exists(PATH))
+            {
+                File.Create(PATH).Dispose();
+            }
+
             try
             {
-                if (!File.Exists(PATH))
-                {
-                    throw new FileNotFoundException();
-                }
-
                 var lines = File.ReadAllLines(PATH);
-                var dict = lines.Select(l =>
-                   l.Split(DEL))
-                    .ToDictionary(p => p[0], p => p[1]);
-
-                string? image = dict.GetValueOrDefault(playerName);
-                if (image == null)
+                foreach (var line in lines)
                 {
-                    throw new NullReferenceException();
+                    var parts = line.Split(DEL);
+                    if (parts.Length == 2 && parts[0] == playerName)
+                        return parts[1]; // vrati path
                 }
 
-                return image;
+                return string.Empty; // nije nađen
             }
-            catch (Exception)
+            catch
             {
-                throw new Exception("Error with loading player image.");
+                return string.Empty; // fallback
             }
         }
 
+
         public void SaveImage(string imagePath, string playerName)
         {
+            string test = LoadImage(playerName);
+
             try
             {
+                if (!string.IsNullOrEmpty(test))
+                {
+                    // Ako postoji, izbaci ga
+                    var lines = File.ReadAllLines(PATH).Where(line => !line.StartsWith(playerName + DEL)).ToList();
+                    File.WriteAllLines(PATH, lines);
+                }
+
                 File.AppendAllText(PATH, $"{playerName}{DEL}{imagePath}\n");
             }
             catch (Exception)

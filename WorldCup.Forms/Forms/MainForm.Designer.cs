@@ -35,6 +35,8 @@
             label1 = new Label();
             cbTeams = new ComboBox();
             tabPage2 = new TabPage();
+            lbFavoritePlayers = new Label();
+            lbPlayers = new Label();
             flpFavorites = new FlowLayoutPanel();
             flpOthers = new FlowLayoutPanel();
             lbTitleFavoritePlayers = new Label();
@@ -139,6 +141,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(lbFavoritePlayers);
+            tabPage2.Controls.Add(lbPlayers);
             tabPage2.Controls.Add(flpFavorites);
             tabPage2.Controls.Add(flpOthers);
             tabPage2.Controls.Add(lbTitleFavoritePlayers);
@@ -150,6 +154,25 @@
             tabPage2.Text = "Igrači";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Enter += tabPage2_Enter;
+            tabPage2.Leave += tabPage2_Leave;
+            // 
+            // lbFavoritePlayers
+            // 
+            lbFavoritePlayers.AutoSize = true;
+            lbFavoritePlayers.Location = new Point(457, 93);
+            lbFavoritePlayers.Name = "lbFavoritePlayers";
+            lbFavoritePlayers.Size = new Size(106, 20);
+            lbFavoritePlayers.TabIndex = 8;
+            lbFavoritePlayers.Text = "Omiljeni igrači";
+            // 
+            // lbPlayers
+            // 
+            lbPlayers.AutoSize = true;
+            lbPlayers.Location = new Point(29, 94);
+            lbPlayers.Name = "lbPlayers";
+            lbPlayers.Size = new Size(46, 20);
+            lbPlayers.TabIndex = 7;
+            lbPlayers.Text = "Igrači";
             // 
             // flpFavorites
             // 
@@ -157,7 +180,7 @@
             flpFavorites.AutoScroll = true;
             flpFavorites.BorderStyle = BorderStyle.FixedSingle;
             flpFavorites.FlowDirection = FlowDirection.TopDown;
-            flpFavorites.Location = new Point(457, 94);
+            flpFavorites.Location = new Point(457, 117);
             flpFavorites.Name = "flpFavorites";
             flpFavorites.Size = new Size(386, 310);
             flpFavorites.TabIndex = 6;
@@ -171,7 +194,7 @@
             flpOthers.AutoScroll = true;
             flpOthers.BorderStyle = BorderStyle.FixedSingle;
             flpOthers.FlowDirection = FlowDirection.TopDown;
-            flpOthers.Location = new Point(29, 94);
+            flpOthers.Location = new Point(29, 117);
             flpOthers.Name = "flpOthers";
             flpOthers.Size = new Size(386, 310);
             flpOthers.TabIndex = 5;
@@ -203,30 +226,34 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Rang liste";
             tabPage3.UseVisualStyleBackColor = true;
+            tabPage3.Enter += tabPage3_EnterAsync;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(233, 107);
+            dataGridView1.Location = new Point(235, 137);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(581, 285);
+            dataGridView1.RowTemplate.Height = 100;
+            dataGridView1.Size = new Size(579, 294);
             dataGridView1.TabIndex = 8;
             // 
             // btnPrintPdf
             // 
-            btnPrintPdf.Location = new Point(622, 19);
+            btnPrintPdf.Location = new Point(661, 33);
             btnPrintPdf.Name = "btnPrintPdf";
             btnPrintPdf.Size = new Size(153, 54);
             btnPrintPdf.TabIndex = 7;
             btnPrintPdf.Text = "Ispiši";
             btnPrintPdf.UseVisualStyleBackColor = true;
+            btnPrintPdf.Click += btnPrintPdf_Click;
             // 
             // lbCbTitleFilter
             // 
             lbCbTitleFilter.AutoSize = true;
-            lbCbTitleFilter.Location = new Point(24, 84);
+            lbCbTitleFilter.Location = new Point(24, 114);
             lbCbTitleFilter.Name = "lbCbTitleFilter";
             lbCbTitleFilter.Size = new Size(42, 20);
             lbCbTitleFilter.TabIndex = 6;
@@ -236,7 +263,7 @@
             // 
             lbTitleRangList.AutoSize = true;
             lbTitleRangList.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleRangList.Location = new Point(324, 19);
+            lbTitleRangList.Location = new Point(326, 33);
             lbTitleRangList.Name = "lbTitleRangList";
             lbTitleRangList.Size = new Size(209, 54);
             lbTitleRangList.TabIndex = 5;
@@ -245,10 +272,11 @@
             // cbFilter
             // 
             cbFilter.FormattingEnabled = true;
-            cbFilter.Location = new Point(24, 107);
+            cbFilter.Location = new Point(24, 137);
             cbFilter.Name = "cbFilter";
             cbFilter.Size = new Size(178, 28);
             cbFilter.TabIndex = 0;
+            cbFilter.SelectedValueChanged += cbFilter_SelectedValueChanged;
             // 
             // tabPage4
             // 
@@ -456,6 +484,8 @@
         private RadioButton rbWomen;
         private Button btnConfirmSettings;
         private Button btnCancel;
+        private Label lbFavoritePlayers;
+        private Label lbPlayers;
         private DataGridView dataGridView1;
     }
 }
