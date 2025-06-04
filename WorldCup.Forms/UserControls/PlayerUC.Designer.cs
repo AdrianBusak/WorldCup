@@ -44,7 +44,8 @@
             pbImage.Image = Properties.Resources.football_player;
             pbImage.Location = new Point(255, 3);
             pbImage.Name = "pbImage";
-            pbImage.Size = new Size(92, 92);
+            pbImage.Size = new Size(96, 96);
+            pbImage.SizeMode = PictureBoxSizeMode.Zoom;
             pbImage.TabIndex = 0;
             pbImage.TabStop = false;
             pbImage.DoubleClick += pbImage_DoubleClick;

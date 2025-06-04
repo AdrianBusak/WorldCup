@@ -327,6 +327,7 @@ namespace WorldCup.Forms.Forms
             }
 
             var playersStats = GetPlayersStats();
+            var matchData = GetMatchData();
 
             switch (selectedFilter)
             {
@@ -356,13 +357,31 @@ namespace WorldCup.Forms.Forms
                     break;
 
                 case FilterRangList.MATCH:
-                    // implementacija za utakmice
+                    dataGridView1.DataSource = matchData;
+
                     break;
 
                 default:
                     break;
             }
 
+            if (dataGridView1.Columns[2] is DataGridViewImageColumn imageColumn)
+            {
+                imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            }
+
+        }
+
+        private object GetMatchData()
+        {
+            return _selectedCountryMatches.Select(m => new
+            {
+                m.Location,
+                VisitorsCount = m.Attendance,
+                MatchDate = m.Datetime.ToString("dd/MM/yyyy"),
+                HomeTeam = m.HomeTeam.Country,
+                AwayTeam = m.AwayTeam.Country,
+            }).ToList();
         }
 
         private IList<PlayerDetails> GetPlayersStats()
