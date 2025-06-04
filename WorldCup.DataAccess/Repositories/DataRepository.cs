@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Runtime;
-using System.Text;
 using System.Threading.Tasks;
 using WorldCup.DataAccess.Models;
-using WorldCup.DataAccess.Repositories;
-using WorldCup.DataAccess.Services;
 using WorldCup.DataAccess.Services.AppSettingsService;
 using WorldCup.DataAccess.Services.FavoritePlayersService;
 using WorldCup.DataAccess.Services.FavoriteTeamService;
@@ -24,7 +19,6 @@ namespace WorldCup.DataAccess.Repositories
         private readonly IFavoriteTeamHandler _favoriteTeamHandler;
         private readonly IFavoritePlayersHandler _favoritePlayersHandler;
 
-        private static AppSettings appSettings;
         public DataRepository()
         {
             _repo = RepositoryFactory.CreateReader();
@@ -33,18 +27,25 @@ namespace WorldCup.DataAccess.Repositories
             _playerImageHandler = RepositoryFactory.CreatePlayerImagePathHandler();
             _favoriteTeamHandler = RepositoryFactory.CreateFavoriteTeamHandler();
             _favoritePlayersHandler = RepositoryFactory.CreateFavoritePlayersHandler();
-
-            appSettings = _appSettingsHandler.LoadSettings();
         }
 
         public Task<List<NationalTeam>> GetTeamsAsync()
-           => _repo.GetTeamsAsync(appSettings.Competition);
+        {
+            var settings = _appSettingsHandler.LoadSettings();
+            return _repo.GetTeamsAsync(settings.Competition);
+        }
 
         public Task<List<Match>> GetAllMatchesAsync()
-            => _repo.GetAllMatchesAsync(appSettings.Competition);
+        {
+            var settings = _appSettingsHandler.LoadSettings();
+            return _repo.GetAllMatchesAsync(settings.Competition);
+        }
 
         public Task<List<Match>> GetCountryMatchesAsync(string fifaCode)
-            => _repo.GetCountryMatchesAsync(appSettings.Competition, fifaCode);
+        {
+            var settings = _appSettingsHandler.LoadSettings();
+            return _repo.GetCountryMatchesAsync(settings.Competition, fifaCode);
+        }
 
         public async Task<List<Player>> GetPlayersFromFirstMatchAsync(string fifaCode)
         {
@@ -108,6 +109,5 @@ namespace WorldCup.DataAccess.Repositories
 
         public void SavePlayerImage(string imagePath, string playerName)
             => _playerImageHandler.SaveImage(imagePath, playerName);
-
     }
 }

@@ -39,10 +39,14 @@ namespace WorldCup.Forms.Forms
         }
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            await LoadNationalTeamsAsync();
+            //await LoadNationalTeamsAsync();
         }
 
         #region WorldCup tab 1
+        private async void tabPage1_Enter(object sender, EventArgs e)
+        {
+            await LoadNationalTeamsAsync();
+        }
         private void btnConfirmFavoriteTeam_Click(object sender, EventArgs e)
         {
             SaveFavoriteTeam();
@@ -135,6 +139,7 @@ namespace WorldCup.Forms.Forms
         }
         private void RefreshSelectedTeam()
         {
+            //todo napravit sa string.empty(cbteams.selecteditem.tostring())
             if (cbTeams.SelectedItem != null && nationalTeams.ContainsKey(cbTeams.SelectedItem.ToString()!))
             {
                 _selectedTeam = nationalTeams[cbTeams.SelectedItem.ToString()!];
@@ -153,6 +158,12 @@ namespace WorldCup.Forms.Forms
         #region Players tab 2
         private async void tabPage2_Enter(object sender, EventArgs e)
         {
+            if (_selectedTeam == null)
+            {
+                MessageBox.Show("Please select a team first.");
+                return;
+            }
+
             InitPlayers();
         }
 
@@ -516,6 +527,101 @@ namespace WorldCup.Forms.Forms
             }
         }
 
+        #endregion
+
+        #region Settings tab 4
+        private async void btnConfirmSettings_ClickAsync(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox
+                .Show(
+                "Are you sure you want to save the settings?",
+                "Confirm Settings",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+
+            if (result == DialogResult.Yes)
+            {
+                CheckSettingsAsync();
+
+
+                _appSettings = new AppSettings
+                {
+                    Language = gbLanguage.Controls
+                            .OfType<RadioButton>()
+                            .FirstOrDefault(r => r.Checked).Tag.ToString(),
+
+                    Competition = gbGender.Controls
+                            .OfType<RadioButton>()
+                            .FirstOrDefault(r => r.Checked).Tag.ToString(),
+
+                    DataSource = gbDataSource.Controls
+                            .OfType<RadioButton>()
+                            .FirstOrDefault(r => r.Checked).Tag.ToString()
+                };
+
+                _dataRepository.SaveSettings(_appSettings);
+                MessageBox.Show("Settings saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                await LoadNationalTeamsAsync();
+
+
+            }
+        }
+
+        private async void CheckSettingsAsync()
+        {
+            string selectedCompetition = gbGender.Controls
+                .OfType<RadioButton>()
+                .FirstOrDefault(r => r.Checked)?.Tag.ToString();
+
+            if (_appSettings.Competition != selectedCompetition)
+            {
+                favoritePlayers = new List<Player>();
+                _dataRepository.SaveFavoritePlayers(favoritePlayers);
+
+            }
+        }
+
+        private void tabPage4_Enter(object sender, EventArgs e)
+        {
+            InitSettings();
+        }
+
+        private void InitSettings()
+        {
+            if (_appSettings.Competition == rbMen.Tag.ToString())
+            {
+                rbMen.Checked = true;
+            }
+            else if (_appSettings.Competition == rbWomen.Tag.ToString())
+            {
+                rbWomen.Checked = true;
+            }
+
+            if (_appSettings.Language == rbJson.Tag.ToString())
+            {
+                rbJson.Checked = true;
+            }
+            else if (_appSettings.Language == rbApi.Tag.ToString())
+            {
+                rbApi.Checked = true;
+            }
+
+            if (_appSettings.Language == rbEn.Tag.ToString())
+            {
+                rbEn.Checked = true;
+            }
+            else if (_appSettings.Language == rbHr.Tag.ToString())
+            {
+                rbHr.Checked = true;
+            }
+        }
+
+        private async void tabPage1_LeaveAsync(object sender, EventArgs e)
+        {
+            await LoadNationalTeamsAsync();
+        }
         #endregion
     }
 }

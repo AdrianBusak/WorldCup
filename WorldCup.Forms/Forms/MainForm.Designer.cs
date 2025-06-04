@@ -47,17 +47,16 @@
             lbTitleRangList = new Label();
             cbFilter = new ComboBox();
             tabPage4 = new TabPage();
-            groupBox1 = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            gbDataSource = new GroupBox();
+            gbLanguage = new GroupBox();
             rbHr = new RadioButton();
             rbEn = new RadioButton();
+            gbDataSource = new GroupBox();
+            rbApi = new RadioButton();
+            rbJson = new RadioButton();
             gbGender = new GroupBox();
             rbMen = new RadioButton();
             rbWomen = new RadioButton();
             btnConfirmSettings = new Button();
-            btnCancel = new Button();
             lbTitleSettings = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -65,7 +64,7 @@
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage4.SuspendLayout();
-            groupBox1.SuspendLayout();
+            gbLanguage.SuspendLayout();
             gbDataSource.SuspendLayout();
             gbGender.SuspendLayout();
             SuspendLayout();
@@ -96,6 +95,8 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Početna";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Enter += tabPage1_Enter;
+            tabPage1.Leave += tabPage1_LeaveAsync;
             // 
             // lbTitleWorldCup
             // 
@@ -280,11 +281,10 @@
             // 
             // tabPage4
             // 
-            tabPage4.Controls.Add(groupBox1);
+            tabPage4.Controls.Add(gbLanguage);
             tabPage4.Controls.Add(gbDataSource);
             tabPage4.Controls.Add(gbGender);
             tabPage4.Controls.Add(btnConfirmSettings);
-            tabPage4.Controls.Add(btnCancel);
             tabPage4.Controls.Add(lbTitleSettings);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
@@ -293,51 +293,18 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Postavke";
             tabPage4.UseVisualStyleBackColor = true;
+            tabPage4.Enter += tabPage4_Enter;
             // 
-            // groupBox1
+            // gbLanguage
             // 
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Location = new Point(333, 156);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(208, 125);
-            groupBox1.TabIndex = 12;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Jezik";
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(48, 40);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(117, 24);
-            radioButton1.TabIndex = 2;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Hrvatski jezik";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(48, 81);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(118, 24);
-            radioButton2.TabIndex = 3;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Engleski jezik";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // gbDataSource
-            // 
-            gbDataSource.Controls.Add(rbHr);
-            gbDataSource.Controls.Add(rbEn);
-            gbDataSource.Location = new Point(574, 156);
-            gbDataSource.Name = "gbDataSource";
-            gbDataSource.Size = new Size(208, 125);
-            gbDataSource.TabIndex = 11;
-            gbDataSource.TabStop = false;
-            gbDataSource.Text = "Izvor";
+            gbLanguage.Controls.Add(rbHr);
+            gbLanguage.Controls.Add(rbEn);
+            gbLanguage.Location = new Point(333, 156);
+            gbLanguage.Name = "gbLanguage";
+            gbLanguage.Size = new Size(208, 125);
+            gbLanguage.TabIndex = 12;
+            gbLanguage.TabStop = false;
+            gbLanguage.Text = "Jezik";
             // 
             // rbHr
             // 
@@ -345,10 +312,11 @@
             rbHr.Checked = true;
             rbHr.Location = new Point(48, 40);
             rbHr.Name = "rbHr";
-            rbHr.Size = new Size(52, 24);
+            rbHr.Size = new Size(117, 24);
             rbHr.TabIndex = 2;
             rbHr.TabStop = true;
-            rbHr.Text = "API";
+            rbHr.Tag = "hr";
+            rbHr.Text = "Hrvatski jezik";
             rbHr.UseVisualStyleBackColor = true;
             // 
             // rbEn
@@ -356,10 +324,47 @@
             rbEn.AutoSize = true;
             rbEn.Location = new Point(48, 81);
             rbEn.Name = "rbEn";
-            rbEn.Size = new Size(65, 24);
+            rbEn.Size = new Size(118, 24);
             rbEn.TabIndex = 3;
-            rbEn.Text = "JSON";
+            rbEn.TabStop = true;
+            rbEn.Tag = "en";
+            rbEn.Text = "Engleski jezik";
             rbEn.UseVisualStyleBackColor = true;
+            // 
+            // gbDataSource
+            // 
+            gbDataSource.Controls.Add(rbApi);
+            gbDataSource.Controls.Add(rbJson);
+            gbDataSource.Location = new Point(574, 156);
+            gbDataSource.Name = "gbDataSource";
+            gbDataSource.Size = new Size(208, 125);
+            gbDataSource.TabIndex = 11;
+            gbDataSource.TabStop = false;
+            gbDataSource.Text = "Izvor";
+            // 
+            // rbApi
+            // 
+            rbApi.AutoSize = true;
+            rbApi.Checked = true;
+            rbApi.Location = new Point(48, 40);
+            rbApi.Name = "rbApi";
+            rbApi.Size = new Size(52, 24);
+            rbApi.TabIndex = 2;
+            rbApi.TabStop = true;
+            rbApi.Tag = "api";
+            rbApi.Text = "API";
+            rbApi.UseVisualStyleBackColor = true;
+            // 
+            // rbJson
+            // 
+            rbJson.AutoSize = true;
+            rbJson.Location = new Point(48, 81);
+            rbJson.Name = "rbJson";
+            rbJson.Size = new Size(65, 24);
+            rbJson.TabIndex = 3;
+            rbJson.Tag = "json";
+            rbJson.Text = "JSON";
+            rbJson.UseVisualStyleBackColor = true;
             // 
             // gbGender
             // 
@@ -379,6 +384,7 @@
             rbMen.Name = "rbMen";
             rbMen.Size = new Size(77, 24);
             rbMen.TabIndex = 2;
+            rbMen.Tag = "women";
             rbMen.Text = "Žensko";
             rbMen.UseVisualStyleBackColor = true;
             // 
@@ -391,6 +397,7 @@
             rbWomen.Size = new Size(73, 24);
             rbWomen.TabIndex = 3;
             rbWomen.TabStop = true;
+            rbWomen.Tag = "men";
             rbWomen.Text = "Muško";
             rbWomen.UseVisualStyleBackColor = true;
             // 
@@ -404,16 +411,7 @@
             btnConfirmSettings.TabIndex = 9;
             btnConfirmSettings.Text = "Potvrdi";
             btnConfirmSettings.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(65, 350);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(246, 66);
-            btnCancel.TabIndex = 8;
-            btnCancel.Text = "Odustani";
-            btnCancel.UseVisualStyleBackColor = true;
+            btnConfirmSettings.Click += btnConfirmSettings_ClickAsync;
             // 
             // lbTitleSettings
             // 
@@ -445,8 +443,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            gbLanguage.ResumeLayout(false);
+            gbLanguage.PerformLayout();
             gbDataSource.ResumeLayout(false);
             gbDataSource.PerformLayout();
             gbGender.ResumeLayout(false);
@@ -473,17 +471,16 @@
         private Button btnPrintPdf;
         private Label lbCbTitleFilter;
         private Label lbTitleSettings;
-        private GroupBox groupBox1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private GroupBox gbDataSource;
+        private GroupBox gbLanguage;
         private RadioButton rbHr;
         private RadioButton rbEn;
+        private GroupBox gbDataSource;
+        private RadioButton rbApi;
+        private RadioButton rbJson;
         private GroupBox gbGender;
         private RadioButton rbMen;
         private RadioButton rbWomen;
         private Button btnConfirmSettings;
-        private Button btnCancel;
         private Label lbFavoritePlayers;
         private Label lbPlayers;
         private DataGridView dataGridView1;

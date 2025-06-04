@@ -47,7 +47,7 @@ namespace WorldCup.DataAccess.Repositories.FileData
                 var allMatches = await GetAllMatchesAsync(gender);
 
                 var countryMatches = allMatches
-                    .Where(m => m.HomeTeamCountry == fifaCode || m.AwayTeamCountry == fifaCode)
+                    .Where(m => m.HomeTeam.Code == fifaCode || m.AwayTeam.Code == fifaCode)
                     .ToList();
 
                 return countryMatches;
