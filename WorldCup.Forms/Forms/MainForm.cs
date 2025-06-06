@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,9 @@ namespace WorldCup.Forms.Forms
         }
         private async void MainForm_Load(object sender, EventArgs e)
         {
+            var culture = new CultureInfo(_appSettings.Language);
+            Thread.CurrentThread.CurrentUICulture = culture;
+            Thread.CurrentThread.CurrentCulture = culture;
             //await LoadNationalTeamsAsync();
         }
 
@@ -562,6 +566,10 @@ namespace WorldCup.Forms.Forms
 
                 _dataRepository.SaveSettings(_appSettings);
                 MessageBox.Show("Settings saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                var culture = new CultureInfo(_appSettings.Language);
+                Thread.CurrentThread.CurrentUICulture = culture;
+                Thread.CurrentThread.CurrentCulture = culture;
 
                 await LoadNationalTeamsAsync();
 

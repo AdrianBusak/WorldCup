@@ -117,4 +117,1175 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>882, 493</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbTitleWorldCup.Name" xml:space="preserve">
+    <value>lbTitleWorldCup</value>
+  </data>
+  <data name="&gt;&gt;lbTitleWorldCup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTitleWorldCup.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;lbTitleWorldCup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmFavoriteTeam.Name" xml:space="preserve">
+    <value>btnConfirmFavoriteTeam</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmFavoriteTeam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmFavoriteTeam.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmFavoriteTeam.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Name" xml:space="preserve">
+    <value>cbTeams</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>874, 460</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Početna</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbTitleWorldCup.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbTitleWorldCup.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 24pt, style=Bold</value>
+  </data>
+  <data name="lbTitleWorldCup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>234, 76</value>
+  </data>
+  <data name="lbTitleWorldCup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 54</value>
+  </data>
+  <data name="lbTitleWorldCup.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lbTitleWorldCup.Text" xml:space="preserve">
+    <value>Svijetsko prvenstvo</value>
+  </data>
+  <data name="&gt;&gt;lbTitleWorldCup.Name" xml:space="preserve">
+    <value>lbTitleWorldCup</value>
+  </data>
+  <data name="&gt;&gt;lbTitleWorldCup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTitleWorldCup.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;lbTitleWorldCup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnConfirmFavoriteTeam.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="btnConfirmFavoriteTeam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 283</value>
+  </data>
+  <data name="btnConfirmFavoriteTeam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 43</value>
+  </data>
+  <data name="btnConfirmFavoriteTeam.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnConfirmFavoriteTeam.Text" xml:space="preserve">
+    <value>Spremi odabir</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmFavoriteTeam.Name" xml:space="preserve">
+    <value>btnConfirmFavoriteTeam</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmFavoriteTeam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmFavoriteTeam.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmFavoriteTeam.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 194</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 28</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Omiljena ekipa</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbTeams.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 225</value>
+  </data>
+  <data name="cbTeams.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 28</value>
+  </data>
+  <data name="cbTeams.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Name" xml:space="preserve">
+    <value>cbTeams</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;cbTeams.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbFavoritePlayers.Name" xml:space="preserve">
+    <value>lbFavoritePlayers</value>
+  </data>
+  <data name="&gt;&gt;lbFavoritePlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbFavoritePlayers.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;lbFavoritePlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Name" xml:space="preserve">
+    <value>lbPlayers</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flpFavorites.Name" xml:space="preserve">
+    <value>flpFavorites</value>
+  </data>
+  <data name="&gt;&gt;flpFavorites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpFavorites.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;flpFavorites.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;flpOthers.Name" xml:space="preserve">
+    <value>flpOthers</value>
+  </data>
+  <data name="&gt;&gt;flpOthers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpOthers.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;flpOthers.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbTitleFavoritePlayers.Name" xml:space="preserve">
+    <value>lbTitleFavoritePlayers</value>
+  </data>
+  <data name="&gt;&gt;lbTitleFavoritePlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTitleFavoritePlayers.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;lbTitleFavoritePlayers.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>874, 460</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Igrači</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbFavoritePlayers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbFavoritePlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>457, 93</value>
+  </data>
+  <data name="lbFavoritePlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 20</value>
+  </data>
+  <data name="lbFavoritePlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lbFavoritePlayers.Text" xml:space="preserve">
+    <value>Omiljeni igrači</value>
+  </data>
+  <data name="&gt;&gt;lbFavoritePlayers.Name" xml:space="preserve">
+    <value>lbFavoritePlayers</value>
+  </data>
+  <data name="&gt;&gt;lbFavoritePlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbFavoritePlayers.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;lbFavoritePlayers.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbPlayers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbPlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 94</value>
+  </data>
+  <data name="lbPlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="lbPlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lbPlayers.Text" xml:space="preserve">
+    <value>Igrači</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Name" xml:space="preserve">
+    <value>lbPlayers</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;lbPlayers.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flpFavorites.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flpFavorites.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flpFavorites.Location" type="System.Drawing.Point, System.Drawing">
+    <value>457, 117</value>
+  </data>
+  <data name="flpFavorites.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 310</value>
+  </data>
+  <data name="flpFavorites.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="flpFavorites.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpFavorites.Name" xml:space="preserve">
+    <value>flpFavorites</value>
+  </data>
+  <data name="&gt;&gt;flpFavorites.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpFavorites.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;flpFavorites.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flpOthers.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flpOthers.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>TopDown</value>
+  </data>
+  <data name="flpOthers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 117</value>
+  </data>
+  <data name="flpOthers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 310</value>
+  </data>
+  <data name="flpOthers.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="flpOthers.WrapContents" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;flpOthers.Name" xml:space="preserve">
+    <value>flpOthers</value>
+  </data>
+  <data name="&gt;&gt;flpOthers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpOthers.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;flpOthers.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbTitleFavoritePlayers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbTitleFavoritePlayers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 24pt, style=Bold</value>
+  </data>
+  <data name="lbTitleFavoritePlayers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 16</value>
+  </data>
+  <data name="lbTitleFavoritePlayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 54</value>
+  </data>
+  <data name="lbTitleFavoritePlayers.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbTitleFavoritePlayers.Text" xml:space="preserve">
+    <value>Omiljeni igrači</value>
+  </data>
+  <data name="&gt;&gt;lbTitleFavoritePlayers.Name" xml:space="preserve">
+    <value>lbTitleFavoritePlayers</value>
+  </data>
+  <data name="&gt;&gt;lbTitleFavoritePlayers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTitleFavoritePlayers.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;lbTitleFavoritePlayers.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnPrintPdf.Name" xml:space="preserve">
+    <value>btnPrintPdf</value>
+  </data>
+  <data name="&gt;&gt;btnPrintPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrintPdf.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;btnPrintPdf.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbCbTitleFilter.Name" xml:space="preserve">
+    <value>lbCbTitleFilter</value>
+  </data>
+  <data name="&gt;&gt;lbCbTitleFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCbTitleFilter.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;lbCbTitleFilter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbTitleRangList.Name" xml:space="preserve">
+    <value>lbTitleRangList</value>
+  </data>
+  <data name="&gt;&gt;lbTitleRangList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTitleRangList.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;lbTitleRangList.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cbFilter.Name" xml:space="preserve">
+    <value>cbFilter</value>
+  </data>
+  <data name="&gt;&gt;cbFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFilter.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;cbFilter.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>874, 460</value>
+  </data>
+  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Rang liste</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>235, 137</value>
+  </data>
+  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>579, 294</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnPrintPdf.Location" type="System.Drawing.Point, System.Drawing">
+    <value>661, 33</value>
+  </data>
+  <data name="btnPrintPdf.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 54</value>
+  </data>
+  <data name="btnPrintPdf.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnPrintPdf.Text" xml:space="preserve">
+    <value>Ispiši</value>
+  </data>
+  <data name="&gt;&gt;btnPrintPdf.Name" xml:space="preserve">
+    <value>btnPrintPdf</value>
+  </data>
+  <data name="&gt;&gt;btnPrintPdf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPrintPdf.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;btnPrintPdf.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbCbTitleFilter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCbTitleFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 114</value>
+  </data>
+  <data name="lbCbTitleFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 20</value>
+  </data>
+  <data name="lbCbTitleFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lbCbTitleFilter.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="&gt;&gt;lbCbTitleFilter.Name" xml:space="preserve">
+    <value>lbCbTitleFilter</value>
+  </data>
+  <data name="&gt;&gt;lbCbTitleFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbCbTitleFilter.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;lbCbTitleFilter.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbTitleRangList.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbTitleRangList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 24pt, style=Bold</value>
+  </data>
+  <data name="lbTitleRangList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>326, 33</value>
+  </data>
+  <data name="lbTitleRangList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 54</value>
+  </data>
+  <data name="lbTitleRangList.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lbTitleRangList.Text" xml:space="preserve">
+    <value>Rang liste</value>
+  </data>
+  <data name="&gt;&gt;lbTitleRangList.Name" xml:space="preserve">
+    <value>lbTitleRangList</value>
+  </data>
+  <data name="&gt;&gt;lbTitleRangList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTitleRangList.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;lbTitleRangList.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 137</value>
+  </data>
+  <data name="cbFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 28</value>
+  </data>
+  <data name="cbFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbFilter.Name" xml:space="preserve">
+    <value>cbFilter</value>
+  </data>
+  <data name="&gt;&gt;cbFilter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFilter.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;cbFilter.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;gbLanguage.Name" xml:space="preserve">
+    <value>gbLanguage</value>
+  </data>
+  <data name="&gt;&gt;gbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbLanguage.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;gbLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gbDataSource.Name" xml:space="preserve">
+    <value>gbDataSource</value>
+  </data>
+  <data name="&gt;&gt;gbDataSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbDataSource.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;gbDataSource.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;gbGender.Name" xml:space="preserve">
+    <value>gbGender</value>
+  </data>
+  <data name="&gt;&gt;gbGender.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbGender.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;gbGender.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmSettings.Name" xml:space="preserve">
+    <value>btnConfirmSettings</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmSettings.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmSettings.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbTitleSettings.Name" xml:space="preserve">
+    <value>lbTitleSettings</value>
+  </data>
+  <data name="&gt;&gt;lbTitleSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTitleSettings.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;lbTitleSettings.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 29</value>
+  </data>
+  <data name="tabPage4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>874, 460</value>
+  </data>
+  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;rbHr.Name" xml:space="preserve">
+    <value>rbHr</value>
+  </data>
+  <data name="&gt;&gt;rbHr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbHr.Parent" xml:space="preserve">
+    <value>gbLanguage</value>
+  </data>
+  <data name="&gt;&gt;rbHr.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbEn.Name" xml:space="preserve">
+    <value>rbEn</value>
+  </data>
+  <data name="&gt;&gt;rbEn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbEn.Parent" xml:space="preserve">
+    <value>gbLanguage</value>
+  </data>
+  <data name="&gt;&gt;rbEn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 156</value>
+  </data>
+  <data name="gbLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 125</value>
+  </data>
+  <data name="gbLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="gbLanguage.Text" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="&gt;&gt;gbLanguage.Name" xml:space="preserve">
+    <value>gbLanguage</value>
+  </data>
+  <data name="&gt;&gt;gbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbLanguage.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;gbLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbHr.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbHr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 40</value>
+  </data>
+  <data name="rbHr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 24</value>
+  </data>
+  <data name="rbHr.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rbHr.Text" xml:space="preserve">
+    <value>Hrvatski jezik</value>
+  </data>
+  <data name="&gt;&gt;rbHr.Name" xml:space="preserve">
+    <value>rbHr</value>
+  </data>
+  <data name="&gt;&gt;rbHr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbHr.Parent" xml:space="preserve">
+    <value>gbLanguage</value>
+  </data>
+  <data name="&gt;&gt;rbHr.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbEn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbEn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 81</value>
+  </data>
+  <data name="rbEn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 24</value>
+  </data>
+  <data name="rbEn.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="rbEn.Text" xml:space="preserve">
+    <value>Engleski jezik</value>
+  </data>
+  <data name="&gt;&gt;rbEn.Name" xml:space="preserve">
+    <value>rbEn</value>
+  </data>
+  <data name="&gt;&gt;rbEn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbEn.Parent" xml:space="preserve">
+    <value>gbLanguage</value>
+  </data>
+  <data name="&gt;&gt;rbEn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbApi.Name" xml:space="preserve">
+    <value>rbApi</value>
+  </data>
+  <data name="&gt;&gt;rbApi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbApi.Parent" xml:space="preserve">
+    <value>gbDataSource</value>
+  </data>
+  <data name="&gt;&gt;rbApi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Name" xml:space="preserve">
+    <value>rbJson</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Parent" xml:space="preserve">
+    <value>gbDataSource</value>
+  </data>
+  <data name="&gt;&gt;rbJson.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbDataSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>574, 156</value>
+  </data>
+  <data name="gbDataSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 125</value>
+  </data>
+  <data name="gbDataSource.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="gbDataSource.Text" xml:space="preserve">
+    <value>Izvor</value>
+  </data>
+  <data name="&gt;&gt;gbDataSource.Name" xml:space="preserve">
+    <value>gbDataSource</value>
+  </data>
+  <data name="&gt;&gt;gbDataSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbDataSource.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;gbDataSource.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbApi.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbApi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 40</value>
+  </data>
+  <data name="rbApi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 24</value>
+  </data>
+  <data name="rbApi.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rbApi.Text" xml:space="preserve">
+    <value>API</value>
+  </data>
+  <data name="&gt;&gt;rbApi.Name" xml:space="preserve">
+    <value>rbApi</value>
+  </data>
+  <data name="&gt;&gt;rbApi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbApi.Parent" xml:space="preserve">
+    <value>gbDataSource</value>
+  </data>
+  <data name="&gt;&gt;rbApi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbJson.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbJson.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 81</value>
+  </data>
+  <data name="rbJson.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 24</value>
+  </data>
+  <data name="rbJson.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="rbJson.Text" xml:space="preserve">
+    <value>JSON</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Name" xml:space="preserve">
+    <value>rbJson</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbJson.Parent" xml:space="preserve">
+    <value>gbDataSource</value>
+  </data>
+  <data name="&gt;&gt;rbJson.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbMen.Name" xml:space="preserve">
+    <value>rbMen</value>
+  </data>
+  <data name="&gt;&gt;rbMen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbMen.Parent" xml:space="preserve">
+    <value>gbGender</value>
+  </data>
+  <data name="&gt;&gt;rbMen.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbWomen.Name" xml:space="preserve">
+    <value>rbWomen</value>
+  </data>
+  <data name="&gt;&gt;rbWomen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbWomen.Parent" xml:space="preserve">
+    <value>gbGender</value>
+  </data>
+  <data name="&gt;&gt;rbWomen.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gbGender.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 156</value>
+  </data>
+  <data name="gbGender.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 125</value>
+  </data>
+  <data name="gbGender.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="gbGender.Text" xml:space="preserve">
+    <value>Spol</value>
+  </data>
+  <data name="&gt;&gt;gbGender.Name" xml:space="preserve">
+    <value>gbGender</value>
+  </data>
+  <data name="&gt;&gt;gbGender.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbGender.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;gbGender.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rbMen.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbMen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 81</value>
+  </data>
+  <data name="rbMen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 24</value>
+  </data>
+  <data name="rbMen.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rbMen.Text" xml:space="preserve">
+    <value>Žensko</value>
+  </data>
+  <data name="&gt;&gt;rbMen.Name" xml:space="preserve">
+    <value>rbMen</value>
+  </data>
+  <data name="&gt;&gt;rbMen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbMen.Parent" xml:space="preserve">
+    <value>gbGender</value>
+  </data>
+  <data name="&gt;&gt;rbMen.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbWomen.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbWomen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 40</value>
+  </data>
+  <data name="rbWomen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 24</value>
+  </data>
+  <data name="rbWomen.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="rbWomen.Text" xml:space="preserve">
+    <value>Muško</value>
+  </data>
+  <data name="&gt;&gt;rbWomen.Name" xml:space="preserve">
+    <value>rbWomen</value>
+  </data>
+  <data name="&gt;&gt;rbWomen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbWomen.Parent" xml:space="preserve">
+    <value>gbGender</value>
+  </data>
+  <data name="&gt;&gt;rbWomen.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnConfirmSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>563, 350</value>
+  </data>
+  <data name="btnConfirmSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 66</value>
+  </data>
+  <data name="btnConfirmSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnConfirmSettings.Text" xml:space="preserve">
+    <value>Potvrdi</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmSettings.Name" xml:space="preserve">
+    <value>btnConfirmSettings</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmSettings.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmSettings.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lbTitleSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbTitleSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 24pt, style=Bold</value>
+  </data>
+  <data name="lbTitleSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>341, 44</value>
+  </data>
+  <data name="lbTitleSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 54</value>
+  </data>
+  <data name="lbTitleSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lbTitleSettings.Text" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
+  <data name="&gt;&gt;lbTitleSettings.Name" xml:space="preserve">
+    <value>lbTitleSettings</value>
+  </data>
+  <data name="&gt;&gt;lbTitleSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbTitleSettings.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;lbTitleSettings.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>en</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>882, 493</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

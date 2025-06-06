@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             lbTitleWorldCup = new Label();
@@ -75,12 +76,9 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 0);
+            resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(882, 493);
-            tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -88,55 +86,35 @@
             tabPage1.Controls.Add(btnConfirmFavoriteTeam);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(cbTeams);
-            tabPage1.Location = new Point(4, 29);
+            resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(874, 460);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Početna";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Enter += tabPage1_Enter;
             tabPage1.Leave += tabPage1_LeaveAsync;
             // 
             // lbTitleWorldCup
             // 
-            lbTitleWorldCup.AutoSize = true;
-            lbTitleWorldCup.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleWorldCup.Location = new Point(234, 76);
+            resources.ApplyResources(lbTitleWorldCup, "lbTitleWorldCup");
             lbTitleWorldCup.Name = "lbTitleWorldCup";
-            lbTitleWorldCup.Size = new Size(391, 54);
-            lbTitleWorldCup.TabIndex = 3;
-            lbTitleWorldCup.Text = "Svijetsko prvenstvo";
             // 
             // btnConfirmFavoriteTeam
             // 
             btnConfirmFavoriteTeam.BackColor = Color.LightCoral;
-            btnConfirmFavoriteTeam.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnConfirmFavoriteTeam.Location = new Point(312, 283);
+            resources.ApplyResources(btnConfirmFavoriteTeam, "btnConfirmFavoriteTeam");
             btnConfirmFavoriteTeam.Name = "btnConfirmFavoriteTeam";
-            btnConfirmFavoriteTeam.Size = new Size(219, 43);
-            btnConfirmFavoriteTeam.TabIndex = 2;
-            btnConfirmFavoriteTeam.Text = "Spremi odabir";
             btnConfirmFavoriteTeam.UseVisualStyleBackColor = false;
             btnConfirmFavoriteTeam.Click += btnConfirmFavoriteTeam_Click;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(312, 194);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new Size(142, 28);
-            label1.TabIndex = 1;
-            label1.Text = "Omiljena ekipa";
             // 
             // cbTeams
             // 
             cbTeams.FormattingEnabled = true;
-            cbTeams.Location = new Point(312, 225);
+            resources.ApplyResources(cbTeams, "cbTeams");
             cbTeams.Name = "cbTeams";
-            cbTeams.Size = new Size(219, 28);
-            cbTeams.TabIndex = 0;
             cbTeams.SelectionChangeCommitted += cbTeams_SelectionChangeCommitted;
             cbTeams.SelectedValueChanged += cbTeams_SelectedValueChanged;
             // 
@@ -147,71 +125,44 @@
             tabPage2.Controls.Add(flpFavorites);
             tabPage2.Controls.Add(flpOthers);
             tabPage2.Controls.Add(lbTitleFavoritePlayers);
-            tabPage2.Location = new Point(4, 29);
+            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(874, 460);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Igrači";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Enter += tabPage2_Enter;
             tabPage2.Leave += tabPage2_Leave;
             // 
             // lbFavoritePlayers
             // 
-            lbFavoritePlayers.AutoSize = true;
-            lbFavoritePlayers.Location = new Point(457, 93);
+            resources.ApplyResources(lbFavoritePlayers, "lbFavoritePlayers");
             lbFavoritePlayers.Name = "lbFavoritePlayers";
-            lbFavoritePlayers.Size = new Size(106, 20);
-            lbFavoritePlayers.TabIndex = 8;
-            lbFavoritePlayers.Text = "Omiljeni igrači";
             // 
             // lbPlayers
             // 
-            lbPlayers.AutoSize = true;
-            lbPlayers.Location = new Point(29, 94);
+            resources.ApplyResources(lbPlayers, "lbPlayers");
             lbPlayers.Name = "lbPlayers";
-            lbPlayers.Size = new Size(46, 20);
-            lbPlayers.TabIndex = 7;
-            lbPlayers.Text = "Igrači";
             // 
             // flpFavorites
             // 
             flpFavorites.AllowDrop = true;
-            flpFavorites.AutoScroll = true;
+            resources.ApplyResources(flpFavorites, "flpFavorites");
             flpFavorites.BorderStyle = BorderStyle.FixedSingle;
-            flpFavorites.FlowDirection = FlowDirection.TopDown;
-            flpFavorites.Location = new Point(457, 117);
             flpFavorites.Name = "flpFavorites";
-            flpFavorites.Size = new Size(386, 310);
-            flpFavorites.TabIndex = 6;
-            flpFavorites.WrapContents = false;
             flpFavorites.DragDrop += flpFavorites_DragDrop;
             flpFavorites.DragEnter += flpFavorites_DragEnter;
             // 
             // flpOthers
             // 
             flpOthers.AllowDrop = true;
-            flpOthers.AutoScroll = true;
+            resources.ApplyResources(flpOthers, "flpOthers");
             flpOthers.BorderStyle = BorderStyle.FixedSingle;
-            flpOthers.FlowDirection = FlowDirection.TopDown;
-            flpOthers.Location = new Point(29, 117);
             flpOthers.Name = "flpOthers";
-            flpOthers.Size = new Size(386, 310);
-            flpOthers.TabIndex = 5;
-            flpOthers.WrapContents = false;
             flpOthers.DragDrop += flpOthers_DragDrop;
             flpOthers.DragEnter += flpOthers_DragEnter;
             // 
             // lbTitleFavoritePlayers
             // 
-            lbTitleFavoritePlayers.AutoSize = true;
-            lbTitleFavoritePlayers.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleFavoritePlayers.Location = new Point(290, 16);
+            resources.ApplyResources(lbTitleFavoritePlayers, "lbTitleFavoritePlayers");
             lbTitleFavoritePlayers.Name = "lbTitleFavoritePlayers";
-            lbTitleFavoritePlayers.Size = new Size(295, 54);
-            lbTitleFavoritePlayers.TabIndex = 4;
-            lbTitleFavoritePlayers.Text = "Omiljeni igrači";
             // 
             // tabPage3
             // 
@@ -220,12 +171,8 @@
             tabPage3.Controls.Add(lbCbTitleFilter);
             tabPage3.Controls.Add(lbTitleRangList);
             tabPage3.Controls.Add(cbFilter);
-            tabPage3.Location = new Point(4, 29);
+            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(874, 460);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Rang liste";
             tabPage3.UseVisualStyleBackColor = true;
             tabPage3.Enter += tabPage3_EnterAsync;
             // 
@@ -233,50 +180,33 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(235, 137);
+            resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 100;
-            dataGridView1.Size = new Size(579, 294);
-            dataGridView1.TabIndex = 8;
             // 
             // btnPrintPdf
             // 
-            btnPrintPdf.Location = new Point(661, 33);
+            resources.ApplyResources(btnPrintPdf, "btnPrintPdf");
             btnPrintPdf.Name = "btnPrintPdf";
-            btnPrintPdf.Size = new Size(153, 54);
-            btnPrintPdf.TabIndex = 7;
-            btnPrintPdf.Text = "Ispiši";
             btnPrintPdf.UseVisualStyleBackColor = true;
             btnPrintPdf.Click += btnPrintPdf_Click;
             // 
             // lbCbTitleFilter
             // 
-            lbCbTitleFilter.AutoSize = true;
-            lbCbTitleFilter.Location = new Point(24, 114);
+            resources.ApplyResources(lbCbTitleFilter, "lbCbTitleFilter");
             lbCbTitleFilter.Name = "lbCbTitleFilter";
-            lbCbTitleFilter.Size = new Size(42, 20);
-            lbCbTitleFilter.TabIndex = 6;
-            lbCbTitleFilter.Text = "Filter";
             // 
             // lbTitleRangList
             // 
-            lbTitleRangList.AutoSize = true;
-            lbTitleRangList.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleRangList.Location = new Point(326, 33);
+            resources.ApplyResources(lbTitleRangList, "lbTitleRangList");
             lbTitleRangList.Name = "lbTitleRangList";
-            lbTitleRangList.Size = new Size(209, 54);
-            lbTitleRangList.TabIndex = 5;
-            lbTitleRangList.Text = "Rang liste";
             // 
             // cbFilter
             // 
             cbFilter.FormattingEnabled = true;
-            cbFilter.Location = new Point(24, 137);
+            resources.ApplyResources(cbFilter, "cbFilter");
             cbFilter.Name = "cbFilter";
-            cbFilter.Size = new Size(178, 28);
-            cbFilter.TabIndex = 0;
             cbFilter.SelectedValueChanged += cbFilter_SelectedValueChanged;
             // 
             // tabPage4
@@ -286,12 +216,8 @@
             tabPage4.Controls.Add(gbGender);
             tabPage4.Controls.Add(btnConfirmSettings);
             tabPage4.Controls.Add(lbTitleSettings);
-            tabPage4.Location = new Point(4, 29);
+            resources.ApplyResources(tabPage4, "tabPage4");
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(874, 460);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Postavke";
             tabPage4.UseVisualStyleBackColor = true;
             tabPage4.Enter += tabPage4_Enter;
             // 
@@ -299,138 +225,95 @@
             // 
             gbLanguage.Controls.Add(rbHr);
             gbLanguage.Controls.Add(rbEn);
-            gbLanguage.Location = new Point(333, 156);
+            resources.ApplyResources(gbLanguage, "gbLanguage");
             gbLanguage.Name = "gbLanguage";
-            gbLanguage.Size = new Size(208, 125);
-            gbLanguage.TabIndex = 12;
             gbLanguage.TabStop = false;
-            gbLanguage.Text = "Jezik";
             // 
             // rbHr
             // 
-            rbHr.AutoSize = true;
+            resources.ApplyResources(rbHr, "rbHr");
             rbHr.Checked = true;
-            rbHr.Location = new Point(48, 40);
             rbHr.Name = "rbHr";
-            rbHr.Size = new Size(117, 24);
-            rbHr.TabIndex = 2;
             rbHr.TabStop = true;
             rbHr.Tag = "hr";
-            rbHr.Text = "Hrvatski jezik";
             rbHr.UseVisualStyleBackColor = true;
             // 
             // rbEn
             // 
-            rbEn.AutoSize = true;
-            rbEn.Location = new Point(48, 81);
+            resources.ApplyResources(rbEn, "rbEn");
             rbEn.Name = "rbEn";
-            rbEn.Size = new Size(118, 24);
-            rbEn.TabIndex = 3;
             rbEn.TabStop = true;
             rbEn.Tag = "en";
-            rbEn.Text = "Engleski jezik";
             rbEn.UseVisualStyleBackColor = true;
             // 
             // gbDataSource
             // 
             gbDataSource.Controls.Add(rbApi);
             gbDataSource.Controls.Add(rbJson);
-            gbDataSource.Location = new Point(574, 156);
+            resources.ApplyResources(gbDataSource, "gbDataSource");
             gbDataSource.Name = "gbDataSource";
-            gbDataSource.Size = new Size(208, 125);
-            gbDataSource.TabIndex = 11;
             gbDataSource.TabStop = false;
-            gbDataSource.Text = "Izvor";
             // 
             // rbApi
             // 
-            rbApi.AutoSize = true;
+            resources.ApplyResources(rbApi, "rbApi");
             rbApi.Checked = true;
-            rbApi.Location = new Point(48, 40);
             rbApi.Name = "rbApi";
-            rbApi.Size = new Size(52, 24);
-            rbApi.TabIndex = 2;
             rbApi.TabStop = true;
             rbApi.Tag = "api";
-            rbApi.Text = "API";
             rbApi.UseVisualStyleBackColor = true;
             // 
             // rbJson
             // 
-            rbJson.AutoSize = true;
-            rbJson.Location = new Point(48, 81);
+            resources.ApplyResources(rbJson, "rbJson");
             rbJson.Name = "rbJson";
-            rbJson.Size = new Size(65, 24);
-            rbJson.TabIndex = 3;
             rbJson.Tag = "json";
-            rbJson.Text = "JSON";
             rbJson.UseVisualStyleBackColor = true;
             // 
             // gbGender
             // 
             gbGender.Controls.Add(rbMen);
             gbGender.Controls.Add(rbWomen);
-            gbGender.Location = new Point(92, 156);
+            resources.ApplyResources(gbGender, "gbGender");
             gbGender.Name = "gbGender";
-            gbGender.Size = new Size(208, 125);
-            gbGender.TabIndex = 10;
             gbGender.TabStop = false;
-            gbGender.Text = "Spol";
             // 
             // rbMen
             // 
-            rbMen.AutoSize = true;
-            rbMen.Location = new Point(54, 81);
+            resources.ApplyResources(rbMen, "rbMen");
             rbMen.Name = "rbMen";
-            rbMen.Size = new Size(77, 24);
-            rbMen.TabIndex = 2;
             rbMen.Tag = "women";
-            rbMen.Text = "Žensko";
             rbMen.UseVisualStyleBackColor = true;
             // 
             // rbWomen
             // 
-            rbWomen.AutoSize = true;
+            resources.ApplyResources(rbWomen, "rbWomen");
             rbWomen.Checked = true;
-            rbWomen.Location = new Point(54, 40);
             rbWomen.Name = "rbWomen";
-            rbWomen.Size = new Size(73, 24);
-            rbWomen.TabIndex = 3;
             rbWomen.TabStop = true;
             rbWomen.Tag = "men";
-            rbWomen.Text = "Muško";
             rbWomen.UseVisualStyleBackColor = true;
             // 
             // btnConfirmSettings
             // 
             btnConfirmSettings.DialogResult = DialogResult.OK;
             btnConfirmSettings.ForeColor = Color.Black;
-            btnConfirmSettings.Location = new Point(563, 350);
+            resources.ApplyResources(btnConfirmSettings, "btnConfirmSettings");
             btnConfirmSettings.Name = "btnConfirmSettings";
-            btnConfirmSettings.Size = new Size(246, 66);
-            btnConfirmSettings.TabIndex = 9;
-            btnConfirmSettings.Text = "Potvrdi";
             btnConfirmSettings.UseVisualStyleBackColor = true;
             btnConfirmSettings.Click += btnConfirmSettings_ClickAsync;
             // 
             // lbTitleSettings
             // 
-            lbTitleSettings.AutoSize = true;
-            lbTitleSettings.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbTitleSettings.Location = new Point(341, 44);
+            resources.ApplyResources(lbTitleSettings, "lbTitleSettings");
             lbTitleSettings.Name = "lbTitleSettings";
-            lbTitleSettings.Size = new Size(192, 54);
-            lbTitleSettings.TabIndex = 6;
-            lbTitleSettings.Text = "Postavke";
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(882, 493);
             Controls.Add(tabControl1);
             Name = "MainForm";
-            Text = "MainForm";
             FormClosing += MainForm_FormClosing;
             Load += MainForm_Load;
             tabControl1.ResumeLayout(false);

@@ -5,20 +5,23 @@ using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.PerformanceData;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WorldCup.DataAccess.Models;
 using WorldCup.DataAccess.Repositories;
+using WorldCup.DataAccess.Services.AppSettingsService;
 
 namespace WorldCup.Forms.Forms
 {
-    public partial class SettingsForm : Form
+    public partial class Settings : Form
     {
         DataRepository _dataRepository = new DataRepository();
-        AppSettings _appSettings = new AppSettings();
-        public SettingsForm()
+
+        private AppSettings _appSettings;
+        public Settings()
         {
             InitializeComponent();
             _appSettings = _dataRepository.LoadSettings();
@@ -27,16 +30,16 @@ namespace WorldCup.Forms.Forms
 
         private void Init()
         {
-            if(_appSettings.Competition == rbMen.Tag.ToString())
-            {
-                rbMen.Checked = true;
-            }
-            else if (_appSettings.Competition == rbWomen.Tag.ToString())
+            if (_appSettings.Competition == rbWomen.Tag.ToString())
             {
                 rbWomen.Checked = true;
             }
+            else if (_appSettings.Competition == rbMen.Tag.ToString())
+            {
+                rbMen.Checked = true;
+            }
 
-            if(_appSettings.Language == rbEn.Tag.ToString())
+            if (_appSettings.Language == rbEn.Tag.ToString())
             {
                 rbEn.Checked = true;
             }
@@ -73,6 +76,41 @@ namespace WorldCup.Forms.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+        }
+
+        void ChangeCulture(string language)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(language);
+
+            //// Restart forme
+            //var newForm = new Settings();
+            //newForm.Show();
+            //this.Close(); // ili this.Close()
+        }
+
+        private void rbHr_CheckedChanged(object sender, EventArgs e)
+        {
+            var radio = sender as RadioButton;
+            if (radio != null && radio.Checked)
+            {
+                string selectedLanguage = radio.Tag.ToString();
+                ChangeCulture(selectedLanguage);
+            }
+        }
+
+        private void rbEn_CheckedChanged(object sender, EventArgs e)
+        {
+            var radio = sender as RadioButton;
+            if (radio != null && radio.Checked)
+            {
+                string selectedLanguage = radio.Tag.ToString();
+                ChangeCulture(selectedLanguage);
+            }
         }
     }
 }

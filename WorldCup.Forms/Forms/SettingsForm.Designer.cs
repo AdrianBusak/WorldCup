@@ -1,6 +1,6 @@
 ﻿namespace WorldCup.Forms.Forms
 {
-    partial class SettingsForm
+    partial class Settings
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             btnCancel = new Button();
             btnConfirm = new Button();
-            rbMen = new RadioButton();
             rbWomen = new RadioButton();
+            rbMen = new RadioButton();
             gbGender = new GroupBox();
             gbLanguage = new GroupBox();
             rbHr = new RadioButton();
@@ -43,11 +44,8 @@
             // btnCancel
             // 
             btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(22, 300);
+            resources.ApplyResources(btnCancel, "btnCancel");
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(246, 66);
-            btnCancel.TabIndex = 0;
-            btnCancel.Text = "Odustani";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
@@ -55,95 +53,71 @@
             // 
             btnConfirm.DialogResult = DialogResult.OK;
             btnConfirm.ForeColor = Color.Black;
-            btnConfirm.Location = new Point(472, 300);
+            resources.ApplyResources(btnConfirm, "btnConfirm");
             btnConfirm.Name = "btnConfirm";
-            btnConfirm.Size = new Size(246, 66);
-            btnConfirm.TabIndex = 1;
-            btnConfirm.Text = "Potvrdi";
             btnConfirm.UseVisualStyleBackColor = true;
             btnConfirm.Click += btnConfirm_Click;
             // 
-            // rbMen
-            // 
-            rbMen.AutoSize = true;
-            rbMen.Location = new Point(46, 81);
-            rbMen.Name = "rbMen";
-            rbMen.Size = new Size(77, 24);
-            rbMen.TabIndex = 2;
-            rbMen.Tag = "women";
-            rbMen.Text = "Žensko";
-            rbMen.UseVisualStyleBackColor = true;
-            // 
             // rbWomen
             // 
-            rbWomen.AutoSize = true;
-            rbWomen.Checked = true;
-            rbWomen.Location = new Point(46, 40);
+            resources.ApplyResources(rbWomen, "rbWomen");
             rbWomen.Name = "rbWomen";
-            rbWomen.Size = new Size(73, 24);
-            rbWomen.TabIndex = 3;
-            rbWomen.TabStop = true;
-            rbWomen.Tag = "men";
-            rbWomen.Text = "Muško";
+            rbWomen.Tag = "women";
             rbWomen.UseVisualStyleBackColor = true;
+            // 
+            // rbMen
+            // 
+            resources.ApplyResources(rbMen, "rbMen");
+            rbMen.Checked = true;
+            rbMen.Name = "rbMen";
+            rbMen.TabStop = true;
+            rbMen.Tag = "men";
+            rbMen.UseVisualStyleBackColor = true;
             // 
             // gbGender
             // 
-            gbGender.Controls.Add(rbMen);
             gbGender.Controls.Add(rbWomen);
-            gbGender.Location = new Point(80, 107);
+            gbGender.Controls.Add(rbMen);
+            resources.ApplyResources(gbGender, "gbGender");
             gbGender.Name = "gbGender";
-            gbGender.Size = new Size(208, 125);
-            gbGender.TabIndex = 6;
             gbGender.TabStop = false;
-            gbGender.Text = "Spol";
             // 
             // gbLanguage
             // 
             gbLanguage.Controls.Add(rbHr);
             gbLanguage.Controls.Add(rbEn);
-            gbLanguage.Location = new Point(454, 107);
+            resources.ApplyResources(gbLanguage, "gbLanguage");
             gbLanguage.Name = "gbLanguage";
-            gbLanguage.Size = new Size(208, 125);
-            gbLanguage.TabIndex = 7;
             gbLanguage.TabStop = false;
-            gbLanguage.Text = "Jezik";
             // 
             // rbHr
             // 
-            rbHr.AutoSize = true;
+            resources.ApplyResources(rbHr, "rbHr");
             rbHr.Checked = true;
-            rbHr.Location = new Point(48, 40);
             rbHr.Name = "rbHr";
-            rbHr.Size = new Size(117, 24);
-            rbHr.TabIndex = 2;
             rbHr.TabStop = true;
             rbHr.Tag = "hr";
-            rbHr.Text = "Hrvatski jezik";
             rbHr.UseVisualStyleBackColor = true;
+            rbHr.CheckedChanged += rbHr_CheckedChanged;
             // 
             // rbEn
             // 
-            rbEn.AutoSize = true;
-            rbEn.Location = new Point(48, 81);
+            resources.ApplyResources(rbEn, "rbEn");
             rbEn.Name = "rbEn";
-            rbEn.Size = new Size(118, 24);
-            rbEn.TabIndex = 3;
             rbEn.Tag = "en";
-            rbEn.Text = "Engleski jezik";
             rbEn.UseVisualStyleBackColor = true;
+            rbEn.CheckedChanged += rbEn_CheckedChanged;
             // 
-            // SettingsForm
+            // Settings
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(742, 389);
             Controls.Add(gbLanguage);
             Controls.Add(gbGender);
             Controls.Add(btnConfirm);
             Controls.Add(btnCancel);
-            Name = "SettingsForm";
-            Text = "SettingsForm";
+            Name = "Settings";
+            Load += Settings_Load;
             gbGender.ResumeLayout(false);
             gbGender.PerformLayout();
             gbLanguage.ResumeLayout(false);
@@ -155,8 +129,8 @@
 
         private Button btnCancel;
         private Button btnConfirm;
-        private RadioButton rbMen;
         private RadioButton rbWomen;
+        private RadioButton rbMen;
         private GroupBox gbGender;
         private GroupBox gbLanguage;
         private RadioButton rbHr;
