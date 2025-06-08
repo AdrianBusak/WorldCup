@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WorldCup.DataAccess\WorldCup.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

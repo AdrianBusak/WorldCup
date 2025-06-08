@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorldCup.DataAccess.Enums;
 using WorldCup.DataAccess.Helpers;
 using WorldCup.DataAccess.Models;
 
@@ -21,9 +22,10 @@ namespace WorldCup.DataAccess.Services.AppSettingsService
 
                 File.WriteAllLines(FILEPATH, new[]
                 {
-                    $"language={settings.Language.ToLower()}",
-                    $"competition={settings.Competition.ToLower()}",
-                    $"dataSource={settings.DataSource.ToLower()}"
+                    $"language={(settings.Language ?? "hr").ToLower()}",
+                    $"competition={(settings.Competition ?? "men").ToLower()}",
+                    $"dataSource={(settings.DataSource ?? "api").ToLower()}",
+                    $"windowMode={(settings.WindowMode.ToString().ToLower())}"
                 });
             }
             catch (Exception ex)
@@ -55,7 +57,10 @@ namespace WorldCup.DataAccess.Services.AppSettingsService
                 {
                     Language = dict.GetValueOrDefault("language", "hr"),
                     Competition = dict.GetValueOrDefault("competition", "men"),
-                    DataSource = dict.GetValueOrDefault("dataSource", "api")
+                    DataSource = dict.GetValueOrDefault("dataSource", "api"),
+                    WindowMode = Enum.TryParse<WindowMode>(dict.GetValueOrDefault("windowMode", "halfscreen"), true, out var mode)
+                        ? mode
+                        : WindowMode.HALFSCREEN
                 };
             }
             catch (Exception ex)
