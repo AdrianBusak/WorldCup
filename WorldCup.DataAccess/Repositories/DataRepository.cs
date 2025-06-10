@@ -60,7 +60,7 @@ namespace WorldCup.DataAccess.Repositories
                     Name = player.Name,
                     Captain = player.Captain,
                     ShirtNumber = (int)player.ShirtNumber,
-                    Position = player.Position.ToString()
+                    Position = player.Position
                 }).ToList();
 
             var away = firstMatch.AwayTeamStatistics.StartingEleven
@@ -70,7 +70,7 @@ namespace WorldCup.DataAccess.Repositories
                     Name = player.Name,
                     Captain = player.Captain,
                     ShirtNumber = (int)player.ShirtNumber,
-                    Position = player.Position.ToString()
+                    Position = player.Position
                 }).ToList();
 
             return firstMatch.HomeTeam.Code == fifaCode

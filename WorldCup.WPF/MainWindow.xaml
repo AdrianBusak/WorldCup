@@ -16,7 +16,7 @@
                 HorizontalAlignment="Center"  
                 VerticalAlignment="Top"  
                 Margin="20" Background="#AAFFFFFF">
-            <Button Name="btnDetailsHomeTeam" Margin="0,0,20,0">Details</Button>
+            <Button Name="btnDetailsHomeTeam" Margin="0,0,20,0" Click="btnDetailsHomeTeam_Click">Details</Button>
             <ComboBox Name="cbHomeTeam" Width="150"  
                   ItemsSource="{Binding Teams}"  
                   SelectedItem="{Binding SelectedHomeTeam}" 
@@ -28,7 +28,7 @@
                   ItemsSource="{Binding Teams}"  
                   SelectedItem="{Binding SelectedAwayTeam}" />
 
-            <Button Name="btnDetailsAwayTeam" Margin="20,0,20,0">Details</Button>
+            <Button Name="btnDetailsAwayTeam" Margin="20,0,20,0" Click="btnDetailsAwayTeam_Click">Details</Button>
 
 
             <TextBlock Name="lbResult" Text="{Binding MatchResult}"  

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WorldCup.DataAccess.Models;
+using WorldCup.WPF.ViewModels;
 
 namespace WorldCup.WPF
 {
@@ -27,11 +28,21 @@ namespace WorldCup.WPF
             
             
         }
-        public PlayerControl(ViewModels.PlayerDetails playerDetails)
+        public PlayerControl(ViewModels.PlayerDetailsVM playerDetails)
         {
             InitializeComponent();
             DataContext = playerDetails;
 
+        }
+
+        private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var viewModel = DataContext as PlayerDetailsVM;
+            if (viewModel != null && viewModel.Player != null)
+            {
+                var playerDetailsWindow = new PlayerDetailsWindow(DataContext as PlayerDetailsVM);
+                playerDetailsWindow.Show();
+            }
         }
     }
 }

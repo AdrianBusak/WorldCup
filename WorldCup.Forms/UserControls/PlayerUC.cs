@@ -179,7 +179,7 @@ namespace WorldCup.Forms.UserControls
         {
             lbName.Text = Player.Name;
             lbNumber.Text = Player.ShirtNumber.ToString();
-            lbPosition.Text = Player.Position;
+            lbPosition.Text = Player.Position.ToString();
             pbCaptain.Visible = Player.Captain;
         }
 

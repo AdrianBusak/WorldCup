@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorldCup.DataAccess.Enums;
 
 namespace WorldCup.DataAccess.Models
 {
@@ -11,6 +12,6 @@ namespace WorldCup.DataAccess.Models
         public string Name { get; set; }
         public bool Captain { get; set; }
         public int ShirtNumber { get; set; }
-        public string Position { get; set; }
+        public Position Position { get; set; }
     }
 }

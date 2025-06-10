@@ -36,7 +36,7 @@ namespace WorldCup.WPF
         private IList<MatchOption> nationalTeamMatches = new List<MatchOption>();
 
         private NationalTeam _selectedTeam;
-        private Team _selectedAwayTeam;
+        private NationalTeam _selectedAwayTeam;
         private Match _selectedMatch;
 
         private IEnumerable<StartingEleven> homeTeam = new List<StartingEleven>();
@@ -136,12 +136,16 @@ namespace WorldCup.WPF
                 {
                     _selectedTeam = nationalTeams[favoriteTeam];
                     cbHomeTeam.SelectedItem = favoriteTeam;
+                    return;
                 }
                 else if (cbHomeTeam.SelectedItem != null
                     && nationalTeams.ContainsKey(cbHomeTeam.SelectedItem.ToString()!))
                 {
                     _selectedTeam = nationalTeams[cbHomeTeam.SelectedItem.ToString()!];
+                    return;
                 }
+                cbHomeTeam.SelectedIndex = 1;
+                _selectedTeam = nationalTeams[cbHomeTeam.SelectedItem.ToString()!];
             }
             catch (Exception)
             {
@@ -176,11 +180,10 @@ namespace WorldCup.WPF
 
                 _selectedMatch = selectedOption.Match;
 
-                _selectedAwayTeam = _selectedMatch.HomeTeam.Country == _selectedTeam.Country
-                    ? _selectedMatch.AwayTeam
-                    : _selectedMatch.HomeTeam;
+                _selectedAwayTeam = nationalTeams[selectedOption.Name];
 
-                
+
+
                 RenderPlayersOnFieldAsync();
             }
             catch (Exception ex)
@@ -219,13 +222,14 @@ namespace WorldCup.WPF
         {
             try
             {
-                foreach (var player in homeTeam)
+                IList<PlayerDetails> playersStatsHome = GetPlayersStats(_selectedMatch, homeTeam.ToList());
+
+                foreach (var player in playersStatsHome)
                 {
-                    PlayerControl control = new PlayerControl(new ViewModels.PlayerDetails
+                    PlayerControl control = new PlayerControl(new ViewModels.PlayerDetailsVM
                     {
-                        PlayerName = player.Name,
-                        PlayerNumber = (int)player.ShirtNumber,
-                        PlayerImage = LoadImageSource(_dataRepository.LoadPlayerImagePath(player.Name))
+                        Player = player,
+                        PlayerImage = LoadImageSource(player.ImagePath)
                     });
 
                     switch (player.Position)
@@ -245,13 +249,14 @@ namespace WorldCup.WPF
                     }
 
                 }
-                foreach (var player in awayTeam)
+                IList<PlayerDetails> playersStatsAway = GetPlayersStats(_selectedMatch, awayTeam.ToList());
+
+                foreach (var player in playersStatsAway)
                 {
-                    PlayerControl control = new PlayerControl(new ViewModels.PlayerDetails
+                    PlayerControl control = new PlayerControl(new ViewModels.PlayerDetailsVM
                     {
-                        PlayerName = player.Name,
-                        PlayerNumber = (int)player.ShirtNumber,
-                        PlayerImage = LoadImageSource(_dataRepository.LoadPlayerImagePath(player.Name))
+                        Player = player,
+                        PlayerImage = LoadImageSource(player.ImagePath)
                     });
 
                     switch (player.Position)
@@ -268,8 +273,8 @@ namespace WorldCup.WPF
                         case Position.Forward:
                             Zone4.Children.Add(control);
                             break;
-                    }
 
+                    }
                 }
             }
             catch (Exception ex)
@@ -277,6 +282,49 @@ namespace WorldCup.WPF
                 MessageBox.Show($"Error initializing players: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
+        }
+
+        private IList<PlayerDetails> GetPlayersStats(Match match, List<StartingEleven> startingElevens)
+        {
+            var playerStats = new Dictionary<string, PlayerDetails>();
+
+            startingElevens.ToList().ForEach(player =>
+            {
+                playerStats[player.Name] = new PlayerDetails
+                {
+                    Name = player.Name,
+                    GoalsCount = 0,
+                    YellowCardCount = 0,
+                    Captain = player.Captain,
+                    Position = player.Position,
+                    ShirtNumber = player.ShirtNumber,
+                    ImagePath = _dataRepository.LoadPlayerImagePath(player.Name)
+                };
+            });
+
+            var allEvents = match.AwayTeamEvents.Concat(match.HomeTeamEvents);
+
+            foreach (var e in allEvents)
+            {
+                if (!playerStats.ContainsKey(e.Player))
+                {
+                    continue;
+                }
+
+                if (e.TypeOfEvent == TypeOfEvent.Goal || e.TypeOfEvent == TypeOfEvent.GoalPenalty)
+                {
+                    playerStats[e.Player].GoalsCount += 1;
+                }
+                else if (e.TypeOfEvent == TypeOfEvent.YellowCard)
+                {
+                    playerStats[e.Player].YellowCardCount += 1;
+                }
+
+            }
+
+            return playerStats
+                .Select(p => p.Value)
+                .ToList();
         }
 
         private void ClearField()
@@ -369,7 +417,25 @@ namespace WorldCup.WPF
                     break;
             }
         }
-        
-    }
 
+        private void btnDetailsHomeTeam_Click(object sender, RoutedEventArgs e)
+        {
+            TeamDetails teamDetails = new TeamDetails(_selectedTeam);
+            teamDetails.Show();
+        }
+
+        private void btnDetailsAwayTeam_Click(object sender, RoutedEventArgs e)
+        {
+            if (_selectedAwayTeam != null)
+            {
+                TeamDetails teamDetails = new TeamDetails(_selectedAwayTeam);
+                teamDetails.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select an away team first.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+    }
 }

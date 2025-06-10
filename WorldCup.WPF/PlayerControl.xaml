@@ -1,10 +1,11 @@
 ﻿<UserControl x:Class="WorldCup.WPF.PlayerControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             MouseDoubleClick="UserControl_MouseDoubleClick"
              Width="70" Height="80">
     <StackPanel HorizontalAlignment="Center">
         <Image Source="{Binding PlayerImage}" Width="50" Height="53" Stretch="UniformToFill"/>
-        <TextBlock Text="{Binding PlayerName}" Foreground="white" FontWeight="Bold" FontSize="10" TextAlignment="Center" Height="12"/>
-        <TextBlock Text="{Binding PlayerNumber}" Foreground="white" FontSize="10" TextAlignment="Center" Height="13"/>
+        <TextBlock Text="{Binding Player.Name}" Foreground="white" FontWeight="Bold" FontSize="10" TextAlignment="Center" Height="12"/>
+        <TextBlock Text="{Binding Player.ShirtNumber}" Foreground="white" FontSize="10" TextAlignment="Center" Height="13"/>
     </StackPanel>
 </UserControl>
