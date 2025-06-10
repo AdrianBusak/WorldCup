@@ -180,6 +180,7 @@ namespace WorldCup.WPF
                     ? _selectedMatch.AwayTeam
                     : _selectedMatch.HomeTeam;
 
+                
                 RenderPlayersOnFieldAsync();
             }
             catch (Exception ex)
@@ -203,6 +204,9 @@ namespace WorldCup.WPF
                 }
 
                 InitPlayers();
+                lbResult.Text = $"{_selectedMatch.HomeTeam.Country}|{_selectedMatch.HomeTeam.Goals}" +
+                    $" : {_selectedMatch.AwayTeam.Goals}|{_selectedMatch.AwayTeam.Country}";
+
             }
             catch (Exception ex)
             {
@@ -285,6 +289,7 @@ namespace WorldCup.WPF
             Zone5.Children.Clear();
             Zone6.Children.Clear();
             Zone7.Children.Clear();
+            lbResult.Text = string.Empty;
         }
 
         private ImageSource LoadImageSource(string imagePath)
