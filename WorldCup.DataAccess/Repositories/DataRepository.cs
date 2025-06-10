@@ -78,6 +78,43 @@ namespace WorldCup.DataAccess.Repositories
                 : away;
         }
 
+        public List<StartingEleven> GetPlayersFromMatch(Match match, string country)
+        {
+            if (match == null) return new List<StartingEleven>();
+
+            var home = match.HomeTeamStatistics.StartingEleven
+                .Select(player => new StartingEleven
+                {
+                    Name = player.Name,
+                    Captain = player.Captain,
+                    ShirtNumber = (int)player.ShirtNumber,
+                    Position = player.Position
+                }).ToList();
+
+            var away = match.AwayTeamStatistics.StartingEleven
+                .Select(player => new StartingEleven
+                {
+                    Name = player.Name,
+                    Captain = player.Captain,
+                    ShirtNumber = (int)player.ShirtNumber,
+                    Position = player.Position
+                }).ToList();
+
+            return match.HomeTeam.Country == country
+                ? home
+                : away;
+        }
+
+        public async Task<Match> GetMatchByTeamsAsync(string homeTeam, string awayTeam)
+        {
+            var settings = _appSettingsHandler.LoadSettings();
+            List<Match> matches = await _repo.GetAllMatchesAsync(settings.Competition);
+
+            return matches.FirstOrDefault(m =>
+                (m.HomeTeam.Country == homeTeam && m.AwayTeam.Country == awayTeam) ||
+                (m.HomeTeam.Country == awayTeam && m.AwayTeam.Country == homeTeam));
+        }
+
         //
         // ———  LOCAL SETTINGS & FAVORITES  ———
         //

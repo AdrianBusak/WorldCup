@@ -9,6 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\footballPitch.png" />
+    <None Remove="Assets\messi.jfif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\footballPitch.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Assets\messi.jfif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WorldCup.DataAccess\WorldCup.DataAccess.csproj" />
   </ItemGroup>
 
