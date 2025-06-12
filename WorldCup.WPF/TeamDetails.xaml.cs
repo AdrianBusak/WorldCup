@@ -30,19 +30,19 @@ namespace WorldCup.WPF
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            txtCountry.Text = $"Country: {_team.Country}";
-            txtCode.Text = $"FIFA Code: {_team.FifaCode}";
-            txtPlayed.Text = $"Played: {_team.GamesPlayed}";
-            txtWins.Text = $"Wins: {_team.Wins}";
-            txtLosses.Text = $"Losses: {_team.Losses}";
-            txtDraws.Text = $"Draws: {_team.Draws}";
-            txtGoalsScored.Text = $"Goals Scored: {_team.GoalsFor}";
-            txtGoalsConceded.Text = $"Goals Conceded: {_team.GoalsAgainst}";
-            txtGoalDiff.Text = $"Goal Difference: {_team.GoalDifferential}";
 
-            // Pokreni animaciju fade-in
             var animation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(0.5));
             this.BeginAnimation(Window.OpacityProperty, animation);
+
+            txtCountry.Text = _team.Country;
+            txtCode.Text = _team.FifaCode;
+            txtPlayed.Text = _team.GamesPlayed.ToString();
+            txtWins.Text = _team.Wins.ToString();
+            txtLosses.Text = _team.Losses.ToString();
+            txtDraws.Text = _team.Draws.ToString();
+            txtGoalsScored.Text = _team.GoalsFor.ToString();
+            txtGoalsConceded.Text = _team.GoalsAgainst.ToString();
+            txtGoalDiff.Text = _team.GoalDifferential.ToString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

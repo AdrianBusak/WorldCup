@@ -18,21 +18,49 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0">
-            <TextBlock x:Name="txtCountry" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
-            <TextBlock x:Name="txtCode"/>
-            <TextBlock x:Name="txtPlayed"/>
-            <TextBlock x:Name="txtWins"/>
-            <TextBlock x:Name="txtLosses"/>
-            <TextBlock x:Name="txtDraws"/>
-            <TextBlock x:Name="txtGoalsScored"/>
-            <TextBlock x:Name="txtGoalsConceded"/>
-            <TextBlock x:Name="txtGoalDiff"/>
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbCountry" Text="Država: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtCountry"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbCode" Text="FIFA kod: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtCode"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbPlayed" Text="Odigrano: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtPlayed"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbWins" Text="Pobjede: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtWins"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbLosses" Text="Porazi: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtLosses"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbDraws" Text="Neriješeno: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtDraws"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbGoalsScored" Text="Zabijeni golovi: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtGoalsScored"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbGoalsConceded" Text="Primljeni golovi: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtGoalsConceded"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="lbGoalDiff" Text="Razlika golova: " FontWeight="Bold"/>
+                <TextBlock x:Name="txtGoalDiff"/>
+            </StackPanel>
         </StackPanel>
 
-        <!-- Buttons at the bottom -->
+
+
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-            <Button Content="Close" Width="100" Click="Button_Click"/>
+            <Button Name="btnCancelSettings" Content="Odustani" Width="100" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

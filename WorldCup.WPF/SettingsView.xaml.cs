@@ -25,6 +25,7 @@ namespace WorldCup.WPF
     {
         DataRepository _dataRepository = new DataRepository();
         AppSettings _appSettings = new();
+        private static bool _isMainWindowOpen = false;
         public SettingsView()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace WorldCup.WPF
             cbCompetition.ItemsSource = new List<string> { "men", "women" };
             cbLanguage.ItemsSource = new List<string> { "English", "Croatian" };
 
-            if(_appSettings.Language == "en")
+            if (_appSettings.Language == "en")
             {
                 cbLanguage.SelectedIndex = 0;
             }
@@ -46,11 +47,11 @@ namespace WorldCup.WPF
             {
                 cbLanguage.SelectedIndex = 1;
             }
-            if(_appSettings.Competition == "men")
+            if (_appSettings.Competition == "men")
             {
                 cbCompetition.SelectedIndex = 0;
             }
-            else if(_appSettings.Competition == "women")
+            else if (_appSettings.Competition == "women")
             {
                 cbCompetition.SelectedIndex = 1;
             }
@@ -59,15 +60,37 @@ namespace WorldCup.WPF
 
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //ValidateForm();
+
+            if (_isMainWindowOpen)
+            {
+                MessageBoxResult messageBoxResult = MessageBox.Show(
+                    "Are you sure you want to save settings?",
+                    "Exit Confirmation",
+                    MessageBoxButton.OKCancel,
+                    MessageBoxImage.Question,
+                    MessageBoxResult.OK);
+
+                if (messageBoxResult == MessageBoxResult.Cancel)
+                {
+                    return;
+                }
+                else
+                {
+                    _dataRepository.SaveSettings(CollectData());
+                    this.Close();
+                    return;
+                }
+            }
+
             _dataRepository.SaveSettings(CollectData());
-
-
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+            _isMainWindowOpen = true;
         }
 
         private AppSettings CollectData()
@@ -78,6 +101,17 @@ namespace WorldCup.WPF
             appSettings.WindowMode = (WindowMode)Enum.Parse(typeof(WindowMode), cbWindowMode.SelectedItem.ToString().ToUpper());
 
             return appSettings;
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (_isMainWindowOpen)
+            {
+                this.Close();
+                return;
+            }
+
+            Application.Current.Shutdown();
         }
     }
 }

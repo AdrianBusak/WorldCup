@@ -94,8 +94,7 @@ namespace WorldCup.WPF
                     }
                 }
 
-                cbAwayTeam.ItemsSource = nationalTeamMatches
-                                            .ToList();
+                cbAwayTeam.ItemsSource = nationalTeamMatches.ToList();
             }
             catch (Exception)
             {
@@ -154,8 +153,19 @@ namespace WorldCup.WPF
         }
         private void On_Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            _dataRepository.SaveSettings(_appSettings);
+            MessageBoxResult result = MessageBox.Show(
+                "Are you sure you want to exit?",
+                "Exit Confirmation",
+                MessageBoxButton.OKCancel,
+                MessageBoxImage.Question,
+                MessageBoxResult.OK);
+
+            if (result == MessageBoxResult.Cancel)
+            {
+                e.Cancel = true;
+            }
         }
+
         private async void On_SelectionChanged_HomeTeam(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -391,7 +401,6 @@ namespace WorldCup.WPF
             var screenWidth = SystemParameters.PrimaryScreenWidth;
             var screenHeight = SystemParameters.PrimaryScreenHeight;
 
-            // Prvo resetuj prozor
             this.WindowState = WindowState.Normal;
             this.WindowStyle = WindowStyle.SingleBorderWindow;
             this.ResizeMode = ResizeMode.CanResize;
@@ -403,8 +412,8 @@ namespace WorldCup.WPF
                     break;
 
                 case WindowMode.HALFSCREEN:
-                    this.Width = screenWidth / 2;
-                    this.Height = screenHeight;
+                    this.Width = screenWidth / 1.5;
+                    this.Height = screenHeight / 1.5;
                     this.Left = 0;
                     this.Top = 0;
                     break;
@@ -437,5 +446,10 @@ namespace WorldCup.WPF
             }
         }
 
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsView settingsWindow = new SettingsView();
+            settingsWindow.ShowDialog();
+        }
     }
 }

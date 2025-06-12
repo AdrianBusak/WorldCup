@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="Player Details" Height="450" Width="800"
         WindowStartupLocation="CenterOwner">
+    <Window.RenderTransform>
+        <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+    </Window.RenderTransform>
+    
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid Margin="20">
             <Grid.ColumnDefinitions>
@@ -26,22 +31,22 @@
                 <TextBlock Text="{Binding Player.Position}" FontSize="16" Margin="0,5"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Captain: " FontWeight="Bold"/>
+                    <TextBlock Name="lbCaptain" Text="Kapetan: " FontWeight="Bold"/>
                     <TextBlock Text="{Binding Player.Captain}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Shirt Number: " FontWeight="Bold"/>
+                    <TextBlock Name="lbShirtNum" Text="Broj dresa: " FontWeight="Bold"/>
                     <TextBlock Text="{Binding Player.ShirtNumber}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Yellow Cards: " FontWeight="Bold"/>
+                    <TextBlock Name="lbYellowCard" Text="Žuti kartoni: " FontWeight="Bold"/>
                     <TextBlock Text="{Binding Player.YellowCardCount}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Goals: " FontWeight="Bold"/>
+                    <TextBlock Name="lbGoals" Text="Golovi: " FontWeight="Bold"/>
                     <TextBlock Text="{Binding Player.GoalsCount}"/>
                 </StackPanel>
             </StackPanel>

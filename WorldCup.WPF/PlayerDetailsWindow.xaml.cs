@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WorldCup.DataAccess.Models;
@@ -20,12 +21,38 @@ namespace WorldCup.WPF
     /// </summary>
     public partial class PlayerDetailsWindow : Window
     {
-        private PlayerDetails player;
-
         public PlayerDetailsWindow(ViewModels.PlayerDetailsVM playerDetailsVM)
         {
             InitializeComponent();
             DataContext = playerDetailsVM;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var scaleUpX = new DoubleAnimation
+            {
+                From = 0.8,
+                To = 1.0,
+                Duration = TimeSpan.FromSeconds(0.3),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+            };
+
+            var scaleUpY = new DoubleAnimation
+            {
+                From = 0.8,
+                To = 1.0,
+                Duration = TimeSpan.FromSeconds(0.3),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+            };
+
+            var transform = this.RenderTransform as ScaleTransform;
+            transform.BeginAnimation(ScaleTransform.ScaleXProperty, scaleUpX);
+            transform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleUpY);
+        }
+        public PlayerDetailsWindow()
+        {
+            InitializeComponent();
+            this.RenderTransform = new ScaleTransform();
         }
     }
 }
