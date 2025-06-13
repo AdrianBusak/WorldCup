@@ -90,7 +90,6 @@
             tabPage1.Name = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Enter += tabPage1_Enter;
-            tabPage1.Leave += tabPage1_LeaveAsync;
             // 
             // lbTitleWorldCup
             // 

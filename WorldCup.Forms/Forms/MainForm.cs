@@ -49,7 +49,14 @@ namespace WorldCup.Forms.Forms
         #region WorldCup tab 1
         private async void tabPage1_Enter(object sender, EventArgs e)
         {
-            await LoadNationalTeamsAsync();
+            try
+            {
+                await LoadNationalTeamsAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error with loading national teams");
+            }
         }
         private void btnConfirmFavoriteTeam_Click(object sender, EventArgs e)
         {
@@ -173,11 +180,18 @@ namespace WorldCup.Forms.Forms
 
         private async Task InitPlayers()
         {
-            await InitFavoritePlayers();
-            await InitOtherPlayers();
+            try
+            {
+                await InitFavoritePlayers();
+                await InitOtherPlayers();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error with initialize players.");
+            }
 
         }
-        async Task InitFavoritePlayers()
+        private async Task InitFavoritePlayers()
         {
             favoritePlayers = await _dataRepository.LoadFavoritePlayers();
 
@@ -195,7 +209,7 @@ namespace WorldCup.Forms.Forms
             }
         }
 
-        async Task InitOtherPlayers()
+        private async Task InitOtherPlayers()
         {
             players = await _dataRepository.GetPlayersFromFirstMatchAsync(_selectedTeam.FifaCode);
 
@@ -223,19 +237,27 @@ namespace WorldCup.Forms.Forms
         }
         private void tabPage2_Leave(object sender, EventArgs e)
         {
-            // Save images for favorite players
-            foreach (var playerUC in flpFavorites.Controls.OfType<PlayerUC>())
+            try
             {
-                if (!string.IsNullOrEmpty(playerUC.PlayerImage) && System.IO.File.Exists(playerUC.PlayerImage))
-                {
-                    _dataRepository.SavePlayerImage(playerUC.PlayerImage, playerUC.Player.Name);
-                }
+                SaveImages();
             }
-
-            // Save images for other players
-            foreach (var playerUC in flpOthers.Controls.OfType<PlayerUC>())
+            catch (Exception)
             {
-                if (!string.IsNullOrEmpty(playerUC.PlayerImage) && System.IO.File.Exists(playerUC.PlayerImage))
+                MessageBox.Show("Error with saving images");
+            }
+        }
+
+        private void SaveImages()
+        {
+            SavePlayerImagesFromPanel(flpFavorites);
+            SavePlayerImagesFromPanel(flpOthers);
+        }
+
+        private void SavePlayerImagesFromPanel(FlowLayoutPanel panel)
+        {
+            foreach (var playerUC in panel.Controls.OfType<PlayerUC>())
+            {
+                if (!string.IsNullOrEmpty(playerUC.PlayerImage) && File.Exists(playerUC.PlayerImage))
                 {
                     _dataRepository.SavePlayerImage(playerUC.PlayerImage, playerUC.Player.Name);
                 }
@@ -341,50 +363,57 @@ namespace WorldCup.Forms.Forms
                 return;
             }
 
-            var playersStats = GetPlayersStats();
-            var matchData = GetMatchData();
-
-            switch (selectedFilter)
+            try
             {
-                case FilterRangList.GOALS:
-                    dataGridView1.DataSource =
-                    playersStats.Select(p => new
-                    {
-                        p.Name,
-                        p.GoalsCount,
-                        Image = File.Exists(p.ImagePath) ? Image.FromFile(p.ImagePath) : Resources.football_player
-                    })
-                        .OrderByDescending(p => p.GoalsCount)
-                        .ThenBy(p => p.Name)
-                        .ToList();
-                    break;
+                var playersStats = GetPlayersStats();
+                var matchData = GetMatchData();
 
-                case FilterRangList.YELLOW_CARDS:
-                    dataGridView1.DataSource = playersStats.Select(p => new
-                    {
-                        p.Name,
-                        p.YellowCardCount,
-                        Image = File.Exists(p.ImagePath) ? Image.FromFile(p.ImagePath) : Resources.football_player
-                    })
-                        .OrderByDescending(p => p.YellowCardCount)
-                        .ThenBy(p => p.Name)
-                        .ToList();
-                    break;
+                switch (selectedFilter)
+                {
+                    case FilterRangList.GOALS:
+                        dataGridView1.DataSource =
+                        playersStats.Select(p => new
+                        {
+                            p.Name,
+                            p.GoalsCount,
+                            Image = File.Exists(p.ImagePath) ? Image.FromFile(p.ImagePath) : Resources.football_player
+                        })
+                            .OrderByDescending(p => p.GoalsCount)
+                            .ThenBy(p => p.Name)
+                            .ToList();
+                        break;
 
-                case FilterRangList.MATCH:
-                    dataGridView1.DataSource = matchData;
+                    case FilterRangList.YELLOW_CARDS:
+                        dataGridView1.DataSource = playersStats.Select(p => new
+                        {
+                            p.Name,
+                            p.YellowCardCount,
+                            Image = File.Exists(p.ImagePath) ? Image.FromFile(p.ImagePath) : Resources.football_player
+                        })
+                            .OrderByDescending(p => p.YellowCardCount)
+                            .ThenBy(p => p.Name)
+                            .ToList();
+                        break;
 
-                    break;
+                    case FilterRangList.MATCH:
+                        dataGridView1.DataSource = matchData;
 
-                default:
-                    break;
+                        break;
+
+                    default:
+                        break;
+                }
+
+                if (dataGridView1.Columns[2] is DataGridViewImageColumn imageColumn)
+                {
+                    imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                }
+
             }
-
-            if (dataGridView1.Columns[2] is DataGridViewImageColumn imageColumn)
+            catch (Exception)
             {
-                imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                MessageBox.Show("Error with showing rank list.");
             }
-
         }
 
         private object GetMatchData()
@@ -626,10 +655,6 @@ namespace WorldCup.Forms.Forms
             }
         }
 
-        private async void tabPage1_LeaveAsync(object sender, EventArgs e)
-        {
-            await LoadNationalTeamsAsync();
-        }
         #endregion
     }
 }

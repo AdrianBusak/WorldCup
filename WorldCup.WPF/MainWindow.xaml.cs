@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using WorldCup.DataAccess.Enums;
 using WorldCup.DataAccess.Models;
 using WorldCup.DataAccess.Repositories;
+using WorldCup.WPF.Models;
 
 namespace WorldCup.WPF
 {
@@ -23,14 +24,6 @@ namespace WorldCup.WPF
         DataRepository _dataRepository = new DataRepository();
         AppSettings _appSettings = new AppSettings();
 
-
-        internal class MatchOption
-        {
-            public string Name { get; set; }
-            public Match Match { get; set; }
-            public override string ToString()
-            => Name;
-        }
 
         private Dictionary<string, NationalTeam> nationalTeams = new Dictionary<string, NationalTeam>();
         private List<MatchOption> nationalTeamMatches = new List<MatchOption>();

@@ -84,9 +84,16 @@ namespace WorldCup.Forms.Forms
 
         void ChangeCulture(string language)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(language);
+            try
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(language);
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error with changing culture.");
+            }
             //// Restart forme
             //var newForm = new Settings();
             //newForm.Show();
