@@ -627,6 +627,8 @@ namespace WorldCup.Forms.Forms
 
         private void InitSettings()
         {
+            _appSettings = _dataRepository.LoadSettings();
+
             if (_appSettings.Competition == rbMen.Tag.ToString())
             {
                 rbMen.Checked = true;
@@ -636,11 +638,11 @@ namespace WorldCup.Forms.Forms
                 rbWomen.Checked = true;
             }
 
-            if (_appSettings.Language == rbJson.Tag.ToString())
+            if (_appSettings.DataSource == rbJson.Tag.ToString())
             {
                 rbJson.Checked = true;
             }
-            else if (_appSettings.Language == rbApi.Tag.ToString())
+            else if (_appSettings.DataSource == rbApi.Tag.ToString())
             {
                 rbApi.Checked = true;
             }

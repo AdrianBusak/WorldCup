@@ -17,14 +17,16 @@ namespace WorldCup.DataAccess.Services.AppSettingsService
         {
             try
             {
+                AppSettings oldSettings = LoadSettings();
+
                 if (settings == null)
                     throw new ArgumentNullException(nameof(settings), "AppSettings object is null.");
 
                 File.WriteAllLines(FILEPATH, new[]
                 {
-                    $"language={(settings.Language ?? "hr").ToLower()}",
-                    $"competition={(settings.Competition ?? "men").ToLower()}",
-                    $"dataSource={(settings.DataSource ?? "api").ToLower()}",
+                    $"language={(settings.Language ?? oldSettings.Language).ToLower()}",
+                    $"competition={(settings.Competition ?? oldSettings.Competition).ToLower()}",
+                    $"dataSource={(settings.DataSource ?? oldSettings.DataSource).ToLower()}",
                     $"windowMode={(settings.WindowMode.ToString().ToLower())}"
                 });
             }
