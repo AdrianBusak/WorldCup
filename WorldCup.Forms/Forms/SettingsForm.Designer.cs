@@ -62,7 +62,7 @@
             // 
             resources.ApplyResources(rbWomen, "rbWomen");
             rbWomen.Name = "rbWomen";
-            rbWomen.Tag = "women";
+            rbWomen.Tag = "men";
             rbWomen.UseVisualStyleBackColor = true;
             // 
             // rbMen
@@ -71,7 +71,7 @@
             rbMen.Checked = true;
             rbMen.Name = "rbMen";
             rbMen.TabStop = true;
-            rbMen.Tag = "men";
+            rbMen.Tag = "women";
             rbMen.UseVisualStyleBackColor = true;
             // 
             // gbGender

@@ -32,8 +32,8 @@ namespace WorldCup.WPF
             => Name;
         }
 
-        private IDictionary<string, NationalTeam> nationalTeams = new Dictionary<string, NationalTeam>();
-        private IList<MatchOption> nationalTeamMatches = new List<MatchOption>();
+        private Dictionary<string, NationalTeam> nationalTeams = new Dictionary<string, NationalTeam>();
+        private List<MatchOption> nationalTeamMatches = new List<MatchOption>();
 
         private NationalTeam _selectedTeam;
         private NationalTeam _selectedAwayTeam;
@@ -184,8 +184,7 @@ namespace WorldCup.WPF
         {
             try
             {
-                var selectedOption = cbAwayTeam.SelectedItem as MatchOption;
-                if (selectedOption == null)
+                if (cbAwayTeam.SelectedItem is not MatchOption selectedOption)
                     return;
 
                 _selectedMatch = selectedOption.Match;
@@ -294,7 +293,7 @@ namespace WorldCup.WPF
 
         }
 
-        private IList<PlayerDetails> GetPlayersStats(Match match, List<StartingEleven> startingElevens)
+        private List<PlayerDetails> GetPlayersStats(Match match, List<StartingEleven> startingElevens)
         {
             var playerStats = new Dictionary<string, PlayerDetails>();
 

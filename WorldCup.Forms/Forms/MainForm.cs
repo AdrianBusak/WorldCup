@@ -38,7 +38,7 @@ namespace WorldCup.Forms.Forms
             _appSettings = _dataRepository.LoadSettings();
 
         }
-        private async void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             var culture = new CultureInfo(_appSettings.Language);
             Thread.CurrentThread.CurrentUICulture = culture;
@@ -168,10 +168,10 @@ namespace WorldCup.Forms.Forms
                 return;
             }
 
-            InitPlayers();
+            await InitPlayers();
         }
 
-        private async void InitPlayers()
+        private async Task InitPlayers()
         {
             await InitFavoritePlayers();
             await InitOtherPlayers();
@@ -546,7 +546,7 @@ namespace WorldCup.Forms.Forms
 
             if (result == DialogResult.Yes)
             {
-                CheckSettingsAsync();
+                CheckSettings();
 
 
                 _appSettings = new AppSettings
@@ -577,7 +577,7 @@ namespace WorldCup.Forms.Forms
             }
         }
 
-        private async void CheckSettingsAsync()
+        private void CheckSettings()
         {
             string selectedCompetition = gbGender.Controls
                 .OfType<RadioButton>()
