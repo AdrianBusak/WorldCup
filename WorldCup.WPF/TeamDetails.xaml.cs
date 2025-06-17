@@ -31,7 +31,7 @@ namespace WorldCup.WPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            var animation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(0.5));
+            var animation = new DoubleAnimation(0.5, 1, TimeSpan.FromSeconds(0.3));
             this.BeginAnimation(Window.OpacityProperty, animation);
 
             txtCountry.Text = _team.Country;

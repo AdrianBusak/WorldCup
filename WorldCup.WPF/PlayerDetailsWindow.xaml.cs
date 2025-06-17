@@ -31,7 +31,7 @@ namespace WorldCup.WPF
         {
             var scaleUpX = new DoubleAnimation
             {
-                From = 0.8,
+                From = 0.5,
                 To = 1.0,
                 Duration = TimeSpan.FromSeconds(0.3),
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
@@ -39,7 +39,7 @@ namespace WorldCup.WPF
 
             var scaleUpY = new DoubleAnimation
             {
-                From = 0.8,
+                From = 0.5,
                 To = 1.0,
                 Duration = TimeSpan.FromSeconds(0.3),
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }

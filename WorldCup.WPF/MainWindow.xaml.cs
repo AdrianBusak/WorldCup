@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,6 +42,7 @@ namespace WorldCup.WPF
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             InitAsync();
         }
 
@@ -464,15 +466,7 @@ namespace WorldCup.WPF
             ApplyWindowMode(_appSettings.WindowMode);
             await LoadNationalTeamsAsync();
             SetFavoriteTeamSelection();
-            if (_selectedTeam != null)
-            {
-                //await LoadAwayTeamAsync();
-                ClearField();
-            }
-            else
-            {
-                ClearField();
-            }
+            ClearField();
         }
     }
 }
