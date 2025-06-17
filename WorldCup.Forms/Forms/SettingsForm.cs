@@ -75,11 +75,21 @@ namespace WorldCup.Forms.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to exit?",
+                "Exit Confirmation",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         private void Settings_Load(object sender, EventArgs e)
         {
+            ChangeCulture(_appSettings.Language);
         }
 
         void ChangeCulture(string language)

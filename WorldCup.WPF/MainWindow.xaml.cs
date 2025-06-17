@@ -38,6 +38,9 @@ namespace WorldCup.WPF
         {
             InitializeComponent();
             _appSettings = _dataRepository.LoadSettings();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
             InitAsync();
         }
 
@@ -64,35 +67,34 @@ namespace WorldCup.WPF
             {
                 if (_selectedTeam != null)
                 {
-                }
-                IList<Match> matches = await _dataRepository.GetCountryMatchesAsync(_selectedTeam.FifaCode);
-                nationalTeamMatches.Clear();
-                foreach (Match match in matches)
-                {
-                    if (match.AwayTeam.Country != _selectedTeam.Country)
+                    IList<Match> matches = await _dataRepository.GetCountryMatchesAsync(_selectedTeam.FifaCode);
+                    nationalTeamMatches.Clear();
+                    foreach (Match match in matches)
                     {
-                        nationalTeamMatches.Add(new MatchOption
+                        if (match.AwayTeam.Country != _selectedTeam.Country)
                         {
-                            Name = $"{match.AwayTeam.Country} ({match.AwayTeam.Code})",
-                            Match = match
-                        });
-                    }
-                    else
-                    {
-                        nationalTeamMatches.Add(new MatchOption
+                            nationalTeamMatches.Add(new MatchOption
+                            {
+                                Name = $"{match.AwayTeam.Country} ({match.AwayTeam.Code})",
+                                Match = match
+                            });
+                        }
+                        else
                         {
-                            Name = $"{match.HomeTeam.Country} ({match.HomeTeam.Code})",
-                            Match = match
-                        });
+                            nationalTeamMatches.Add(new MatchOption
+                            {
+                                Name = $"{match.HomeTeam.Country} ({match.HomeTeam.Code})",
+                                Match = match
+                            });
+                        }
                     }
-                }
 
-                cbAwayTeam.ItemsSource = nationalTeamMatches.ToList();
+                    cbAwayTeam.ItemsSource = nationalTeamMatches.ToList();
+                }
             }
             catch (Exception)
             {
-
-                throw new ArgumentException("");
+                MessageBox.Show("Error with loading away teams.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private async Task LoadNationalTeamsAsync()
@@ -137,6 +139,15 @@ namespace WorldCup.WPF
                     return;
                 }
                 cbHomeTeam.SelectedIndex = 1;
+                cbHomeTeam.SelectedIndex = 1;
+                if (cbHomeTeam.SelectedItem != null)
+                {
+                    _selectedTeam = nationalTeams[cbHomeTeam.SelectedItem.ToString()!];
+                }
+                else
+                {
+                    MessageBox.Show("No team selected.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
                 _selectedTeam = nationalTeams[cbHomeTeam.SelectedItem.ToString()!];
             }
             catch (Exception)
@@ -164,6 +175,8 @@ namespace WorldCup.WPF
             try
             {
                 ClearField();
+                var temp = cbHomeTeam.SelectedItem;
+
                 SaveFavoriteTeam();
                 await LoadAwayTeamAsync();
             }
@@ -385,7 +398,7 @@ namespace WorldCup.WPF
             }
             else
             {
-                _selectedTeam = null;
+                SetFavoriteTeamSelection();
             }
         }
         private void ApplyWindowMode(WindowMode mode)
@@ -443,5 +456,6 @@ namespace WorldCup.WPF
             SettingsView settingsWindow = new SettingsView();
             settingsWindow.ShowDialog();
         }
+
     }
 }

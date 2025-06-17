@@ -18,14 +18,12 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Slika igrača u kvadratnom omjeru -->
             <Grid Width="200" Height="200" Margin="10">
                 <Border BorderBrush="Black" BorderThickness="1">
                     <Image Source="{Binding PlayerImage}" Stretch="UniformToFill"/>
                 </Border>
             </Grid>
 
-            <!-- Podaci o igraču -->
             <StackPanel Grid.Column="1" Margin="20" VerticalAlignment="Center">
                 <TextBlock Text="{Binding Player.Name}" FontSize="24" FontWeight="Bold" TextWrapping="Wrap"/>
                 <TextBlock Text="{Binding Player.Position}" FontSize="16" Margin="0,5"/>

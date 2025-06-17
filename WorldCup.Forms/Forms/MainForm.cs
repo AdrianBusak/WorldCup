@@ -29,7 +29,6 @@ namespace WorldCup.Forms.Forms
         private IEnumerable<Player> players = new List<Player>();
         private IEnumerable<Player> favoritePlayers = new List<Player>();
 
-        private IDictionary<string, PlayerDetails> playerStats = new Dictionary<string, PlayerDetails>();
         private IList<Match> _selectedCountryMatches = new List<Match>();
 
         public MainForm()
@@ -164,7 +163,26 @@ namespace WorldCup.Forms.Forms
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to exit?",
+                "Exit Confirmation",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+                return;
+            }
+
+            foreach (Form openForm in Application.OpenForms)
+            {
+                if (openForm != this)
+                {
+                    openForm.Close();
+                }
+            }
+
         }
         #region Players tab 2
         private async void tabPage2_Enter(object sender, EventArgs e)

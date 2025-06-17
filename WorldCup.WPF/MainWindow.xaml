@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WorldCup.WPF"
         mc:Ignorable="d"
         Closing="On_Window_Closing"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <!-- Background field -->
@@ -50,28 +51,20 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- StackPanel 0 -->
             <StackPanel x:Name="Zone0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-            <!-- StackPanel 1 -->
             <StackPanel x:Name="Zone1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-            <!-- StackPanel 2 -->
             <StackPanel x:Name="Zone2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-            <!-- StackPanel 3 -->
             <StackPanel x:Name="Zone3" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-            <!-- StackPanel 4 -->
             <StackPanel x:Name="Zone4" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-            <!-- StackPanel 5 -->
             <StackPanel x:Name="Zone5" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-            <!-- StackPanel 6 -->
             <StackPanel x:Name="Zone6" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-            <!-- StackPanel 7 -->
             <StackPanel x:Name="Zone7" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
 
