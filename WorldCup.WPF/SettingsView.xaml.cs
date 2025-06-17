@@ -26,6 +26,8 @@ namespace WorldCup.WPF
         DataRepository _dataRepository = new DataRepository();
         AppSettings _appSettings = new();
         private static bool _isMainWindowOpen = false;
+        public static MainWindow mainWindow = new();
+
         public SettingsView()
         {
             InitializeComponent();
@@ -61,9 +63,8 @@ namespace WorldCup.WPF
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            //ValidateForm();
 
             if (_isMainWindowOpen)
             {
@@ -82,12 +83,12 @@ namespace WorldCup.WPF
                 {
                     _dataRepository.SaveSettings(CollectData());
                     this.Close();
+                    await mainWindow.RefreshSettingsAsync();
                     return;
                 }
             }
 
             _dataRepository.SaveSettings(CollectData());
-            MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
             _isMainWindowOpen = true;

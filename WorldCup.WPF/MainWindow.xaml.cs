@@ -46,6 +46,7 @@ namespace WorldCup.WPF
 
         private async void InitAsync()
         {
+            _appSettings = _dataRepository.LoadSettings();
             ApplyWindowMode(_appSettings.WindowMode);
 
             try
@@ -92,9 +93,9 @@ namespace WorldCup.WPF
                     cbAwayTeam.ItemsSource = nationalTeamMatches.ToList();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error with loading away teams.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Select away team", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
         private async Task LoadNationalTeamsAsync()
@@ -425,7 +426,7 @@ namespace WorldCup.WPF
 
                 case WindowMode.QUARTERSCREEN:
                     this.Width = screenWidth / 2;
-                    this.Height = screenHeight / 2;
+                    this.Height = screenHeight / 2 + 200;
                     this.Left = 0;
                     this.Top = 0;
                     break;
@@ -457,5 +458,21 @@ namespace WorldCup.WPF
             settingsWindow.ShowDialog();
         }
 
+        internal async Task RefreshSettingsAsync()
+        {
+            _appSettings = _dataRepository.LoadSettings();
+            ApplyWindowMode(_appSettings.WindowMode);
+            await LoadNationalTeamsAsync();
+            SetFavoriteTeamSelection();
+            if (_selectedTeam != null)
+            {
+                //await LoadAwayTeamAsync();
+                ClearField();
+            }
+            else
+            {
+                ClearField();
+            }
+        }
     }
 }
